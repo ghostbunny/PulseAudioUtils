@@ -20,7 +20,7 @@ set -x # Uncomment to display verbose output from a terminal launch
 
 #############################
 # 
-# Version: 0.1.
+# Version: 0.1.1
 # clareoldie@gmail.com GPLv2 or later
 # Depends on:  pavucontrol
 #              qpaeq (pulseaudio-equalizer-module)
@@ -34,33 +34,44 @@ set -x # Uncomment to display verbose output from a terminal launch
 # Set up default directory for recordings and a default file.
 # 
 Encoding=UTF-8
-export ICONS="/share/icons/PulseAudioUtils/"
+export ICONS="/usr/share/icons/PulseAudioUtils/"
 export TMPDIR=$HOME/tmp/.Pulse_Audio_Recorder/
-export FILE_ON_OFF="$TMPDIR"/flagOnOff1
+export FILE_ON_OFF="$TMPDIR"flagOnOff1
+###############################
+#
+# i18n
+#
+export TEXTDOMAIN=PulseAudioControlPanel
+export TEXTDOMAINDIR="/usr/share/locale"
+###############################
+# check if the tmp dir exists
+if [ ! -d $TMPDIR ]; then
+	mkdir -p $TMPDIR
+fi
 ###############################
 # Set the initial indicator of the button depending on the mixer status
 if [ "$(pactl list | grep -B 2 '=Mixer1')" ]
 then
-ln -sf "$ICONS/mixer-stop.png" "$TMPDIR"/PIX1.png
-touch "$TMPDIR"/flagOnOff1
+ln -sf "$ICONS""mixer-stop.png" "$TMPDIR"PIX1.png
+touch "$TMPDIR"flagOnOff1
 else
-ln -sf "$ICONS/mixer-start.png" "$TMPDIR"/PIX1.png
+ln -sf "$ICONS""mixer-start.png" "$TMPDIR"PIX1.png
 fi
 ###############################
 funcOnOff() {
         if [ -f "$FILE_ON_OFF" ]
         then
-                ln -sf "$ICONS/mixer-start.png" "$TMPDIR"/PIX1.png
+                ln -sf "$ICONS""mixer-start.png" "$TMPDIR"PIX1.png
                 rm -f "$FILE_ON_OFF"
         else
-                ln -sf "$ICONS/mixer-stop.png" "$TMPDIR"/PIX1.png
+                ln -sf "$ICONS""mixer-stop.png" "$TMPDIR"PIX1.png
                 echo > "$FILE_ON_OFF"
         fi
 }; export -f funcOnOff
 ###############################
 # The main working application
 export MAIN_DIALOG='
-<window  icon-name="pulseaudio" window_position="1" title="Pulse Audio Control Panel">
+<window  icon-name="pulseaudio" window_position="1" title='$"Pulse Audio Control Panel"'>
 	<vbox>
 		<hseparator></hseparator>
 		<hseparator></hseparator>
@@ -70,8 +81,8 @@ export MAIN_DIALOG='
 			<hbox homogeneous="true" space-expand="true">
 				<hbox>
 					<vbox>
-						<button tooltip-text=" This utility allows the user to not only alter volumes but also to determine to which device a sound stream is sent, amongst other functions. It is well worth the effort to familiarise yourself with this utility.">
-							<label>PaVolControl</label>
+						<button tooltip-text='$" This utility allows the user to not only alter volumes but also to determine to which device a sound stream is sent, amongst other functions. It is well worth the effort to familiarise yourself with this utility."'>
+							<label>'$"PaVolControl"'</label>
 							<height>22</height>
 							<input file>"/usr/share/icons/pavucontrol.png"</input>
 							<action>pavucontrol &</action>
@@ -79,8 +90,8 @@ export MAIN_DIALOG='
 					</vbox>
         
 					<vbox>
-						<button tooltip-text="Launch the PulseAudio Equalizer. This displays as many sliders as will fit in the display ... so enlarging the window horizontally causes many more sliders to become available.">
-							<label>Equalizer</label>
+						<button tooltip-text='$"Launch the PulseAudio Equalizer. This displays as many sliders as will fit in the display ... so enlarging the window horizontally causes many more sliders to become available."'>
+							<label>'$"Equalizer"'</label>
 							<height>22</height>
 							<input file>"'$ICONS'/equalizer.png"</input>
 							<action>qpaeq &</action>
@@ -90,8 +101,8 @@ export MAIN_DIALOG='
 
 
 					<vbox>
-						<button tooltip-text="PulseAudio Preferences provides a means to set up audio over the network, multicasting and sending simultaneous output to all connected sound sink devices.">
-							<label>PAPrefs    </label>
+						<button tooltip-text='$"PulseAudio Preferences provides a means to set up audio over the network, multicasting and sending simultaneous output to all connected sound sink devices."'>
+							<label>'$"PAPrefs    "'</label>
 							<height>22</height>
 							<input file>"/usr/share/icons/paprefs.png"</input>
 							<action>paprefs &</action>
@@ -112,7 +123,7 @@ export MAIN_DIALOG='
 			<hbox homogeneous="true" space-expand="true">
 				<hbox>
 					<vbox>
-						<button tooltip-text="This does all the settings to provide a two input mixer and a mixed output which can be recorded. You can mix any two sound sources available in PulseAudio. Use the PulseAudio Volume Control utility to manage the mixer.">
+						<button tooltip-text='$"This does all the settings to provide a two input mixer and a mixed output which can be recorded. You can mix any two sound sources available in PulseAudio. Use the PulseAudio Volume Control utility to manage the mixer."'>
 							<label>"'"$ToggleLabel"'"</label>
 							<height>22</height>
 							<variable>Toggle</variable>           
@@ -125,8 +136,8 @@ export MAIN_DIALOG='
 					</vbox>
 
 					<vbox>
-						<button tooltip-text="This allows you to record any sound that is being handled by PulseAudio. It can be used to record the mixer output, or any sound stream being played.">
-							<label>Audio Recorder</label>
+						<button tooltip-text='$"This allows you to record any sound that is being handled by PulseAudio. It can be used to record the mixer output, or any sound stream being played."'>
+							<label>'$"Audio Recorder"'</label>
 							<height>22</height>
 							<input file>"'$ICONS'/record.png"</input>
 							<action>/usr/bin/PulseAudioRecorder &</action>
@@ -134,8 +145,8 @@ export MAIN_DIALOG='
 					</vbox>
 
 					<vbox>
-						<button tooltip-text="Close this Control Panel">
-							<label>Quit</label>
+						<button tooltip-text='$"Close this Control Panel"'>
+							<label>'$"Quit"'</label>
 							<height>22</height>
 							<input file>"'$ICONS'/eject.png"</input>
 						</button>
@@ -153,7 +164,7 @@ export MAIN_DIALOG='
 
 export GUI="`echo "$MAIN_DIALOG" | sed -e 's/##.*//'`" 
 gtkdialog -p GUI
-rm -f "$TMPDIR"/flagOnOff1  "$TMPDIR"/PIX1.png
+rm -f "$TMPDIR"flagOnOff1  "$TMPDIR"PIX1.png
 exit 0
 
 

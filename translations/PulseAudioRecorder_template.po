@@ -1,0 +1,94 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PulseAudioRecorder 0.1.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-07-08 21:34+0200\n"
+"PO-Revision-Date: 2013-07-08 22:02+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:70
+msgid "Select the Device from whose Sound Stream you wish to Record"
+msgstr ""
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:77
+msgid ""
+"Name|                                     Click on this bar to sort the "
+"items below.  "
+msgstr ""
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:88
+msgid "Select Highlighted Entry and Close this Window"
+msgstr ""
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:106
+msgid "  Pulse Audio Recorder"
+msgstr ""
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:114
+msgid "Select  Source  Device "
+msgstr ""
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:127
+msgid ""
+"Here you select the output file name for your saved audio. You may select an "
+"existing file, or type in the name of a new file to record to. It is very "
+"important that you include a file name and a file extension such as '"
+msgstr ""
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:128
+msgid "Select Output Filename"
+msgstr ""
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:134
+msgid ""
+"Enter or Select an Audio Filename which has a  .wav, .ogg, .mp2, .mp3 or ."
+"flac extension"
+msgstr ""
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:150
+msgid ""
+"Be sure you have selected both an audio source and a valid output file for "
+"your recording. If either are incorrect go back and re-select before "
+"commencing the recording."
+msgstr ""
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:151
+msgid "Start Recording"
+msgstr ""
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:184
+msgid ""
+"To Pause a recording press this button and to Resume recording press it "
+"again. A 0.5 sec gap of silence will be introduced at each Pause."
+msgstr ""
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:188
+msgid "Pause/Resume"
+msgstr ""
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:204
+msgid "Select '"
+msgstr ""
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:205
+msgid "Stop Recording"
+msgstr ""
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:224
+msgid " Select '"
+msgstr ""
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:225
+msgid "Close Application"
+msgstr ""

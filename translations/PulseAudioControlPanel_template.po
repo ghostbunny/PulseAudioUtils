@@ -1,0 +1,80 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PulseAudioUtils 0.1.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-07-08 21:33+0200\n"
+"PO-Revision-Date: 2013-07-08 21:40+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:69
+msgid "Pulse Audio Control Panel"
+msgstr ""
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:79
+msgid ""
+" This utility allows the user to not only alter volumes but also to "
+"determine to which device a sound stream is sent, amongst other functions. "
+"It is well worth the effort to familiarise yourself with this utility."
+msgstr ""
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:80
+msgid "PaVolControl"
+msgstr ""
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:88
+msgid ""
+"Launch the PulseAudio Equalizer. This displays as many sliders as will fit "
+"in the display ... so enlarging the window horizontally causes many more "
+"sliders to become available."
+msgstr ""
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:89
+msgid "Equalizer"
+msgstr ""
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:99
+msgid ""
+"PulseAudio Preferences provides a means to set up audio over the network, "
+"multicasting and sending simultaneous output to all connected sound sink "
+"devices."
+msgstr ""
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:100
+msgid "PAPrefs    "
+msgstr ""
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:121
+msgid ""
+"This does all the settings to provide a two input mixer and a mixed output "
+"which can be recorded. You can mix any two sound sources available in "
+"PulseAudio. Use the PulseAudio Volume Control utility to manage the mixer."
+msgstr ""
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:134
+msgid ""
+"This allows you to record any sound that is being handled by PulseAudio. It "
+"can be used to record the mixer output, or any sound stream being played."
+msgstr ""
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:135
+msgid "Audio Recorder"
+msgstr ""
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:143
+msgid "Close this Control Panel"
+msgstr ""
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:144
+msgid "Quit"
+msgstr ""
