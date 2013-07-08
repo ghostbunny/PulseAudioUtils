@@ -1,0 +1,242 @@
+#!/bin/bash
+ set -x # Uncomment to display verbose output from a terminal launch
+# This file is free software; you can redistribute it and/or modify it
+# under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+#
+#############################
+# 
+# Version: 0.1.
+# clareoldie@gmail.com GPLv2 or later
+# Depends on Sox and Pulse Audio being installed and properly working.
+#
+#############################
+# 
+# Set up default directory for recordings and a default file.
+# 
+Encoding=UTF-8
+mkdir -p $HOME/PulseAudioRecorder/  
+touch $HOME/PulseAudioRecorder/default.wav  
+#############################
+# Timer related
+export ICONS="/share/icons/PulseAudioUtils/"
+export TMPDIR=$HOME/tmp/.Pulse_Audio_Recorder/
+mkdir -p "$TMPDIR"
+export FILE_ON_OFF="$TMPDIR"/flagOnOff
+rm -f "$FILE_ON_OFF"
+ln -sf "$ICONS/small-red.png" "$TMPDIR"/PIX.png   # small shows on launch
+##############################
+# This is to alternate between the two red icons when recording.
+# It is used in conjunction with the timer (TMR) and
+# with pixmap (PIX) to give a visual display when recording.
+##############################
+funcOnOff() {
+        if [ -f "$FILE_ON_OFF" ]
+        then
+                ln -sf "$ICONS/small-red.png" "$TMPDIR"/PIX.png
+                rm -f "$FILE_ON_OFF"
+        else
+                ln -sf "$ICONS/large-red.png" "$TMPDIR"/PIX.png
+                echo > "$FILE_ON_OFF"
+        fi
+}; export -f funcOnOff
+#############################
+# Set up for the Pause/Resume icons
+# 
+cp "$ICONS"/pause.png "$TMPDIR"/false.png
+cp "$ICONS"/start.png "$TMPDIR"/true.png
+ln -sf "$TMPDIR"/false.png "$TMPDIR"/togbut1.png
+# 
+#############################
+# This is the dialog for listing and selecting the sources available
+# Note: Any translations will need to take the output of the pactl command into account.
+# "Source" and "Name:" would have to be translated I believe.
+############################
+export TABLE_DIALOG='
+<window icon-name="gtk-media-record" title="Select the Device from whose Sound Stream you wish to Record">
+<vbox>
+  <hbox tooltip-text="Select the device.">
+      <table column-visible="false|true" selected-row="0" selection-mode="2" sort-function="1" exported-column="0">
+         <variable>SelectedSource</variable>
+         <width>750</width>
+         <height>200</height>
+         <label>Name|                                     Click on this bar to sort the items below.  </label>
+         
+         <input>pactl list| grep -A3 -E "Source #"| grep -A1 -E "Name: "| cut -d : -f2 | tr '"'\n'"' '"'|'"' | sed '"'s/|--|/\n/g'"' | sed  '"'s/| / | Microphone of /'"' | sed  '"'s/| Microphone of Monitor of/ |    Monitor of the Output to/'"' | tee "$TMPDIR"DeviceList</input>
+         
+         <action type="refresh">SelectedEntry</action>
+        <action>grep "$SelectedSource" "$TMPDIR"DeviceList | cut -d "|" -f2 > "$TMPDIR"Description</action>
+         <action type="refresh">SourceEntry</action>
+      </table>
+  </hbox>
+  <vbox> 
+     <button>
+         <label>Select Highlighted Entry and Close this Window</label>
+         <action type="refresh">SourceEntry</action>
+         <action type="closewindow">SelectedSource</action>
+     </button>     
+  </vbox>
+</vbox>
+</window>
+'
+##############################
+# 
+# During 'Pause' the source is muted. This is to achieve absolute silence on the input.
+# This in turn allows the 'silence' options of Sox to be used to drop the silence during
+# the paused time. Anything greater than absolute silence was not guaranteed to work.
+# Microphones in particular can be noisey but muting the input drops that background noise.
+# 
+###############################
+# The main working application
+export MAIN_DIALOG='
+<window  icon-name="gtk-media-record" window_position="1" title="  Pulse Audio Recorder">
+<vbox>
+<hseparator></hseparator>
+<hseparator></hseparator>
+<hseparator></hseparator>
+  <frame                            Select Source Device and Output Filename>          
+ <hbox>
+    <button tooltip-text="Select the device from which you wish to record ...  either an input device like a microphone or a monitor of the sound going to an output such as speakers.">
+        <label>Select  Source  Device </label>
+        <variable>SourceSelect</variable>
+        <visible>enabled</visible>
+        <action>launch:TABLE_DIALOG</action>
+     </button>           
+    <entry editable="0">
+      <variable>SourceEntry</variable>
+      <default>No_Selection_Made</default>
+      <input>cat "$TMPDIR"Description</input>
+      <action function="enable">FileSelect</action> 
+    </entry>   
+ </hbox>    
+ <hbox>      
+    <button tooltip-text="Here you select the output file name for your saved audio. You may select an existing file, or type in the name of a new file to record to. It is very important that you include a file name and a file extension such as '"'.wav'"', '"'.ogg'"', '"'.flac'"', '"'.mp2'"' or '"'.mp3'"'. Should you enter an invalid filename you will not be able to record to it. Be aware ... if you select an existing file it WILL be overwritten without further warning.">
+        <label>Select Output Filename</label>
+        <visible>disabled</visible>
+        <variable>FileSelect</variable>
+        <action icon-name="gtk-media-record" type="fileselect">SoundFile</action>
+    </button> 
+   
+    <entry icon-name="gtk-media-record" fs-action="file" fs-folder="'$HOME'/PulseAudioRecorder/" fs-filters-mime="audio/*" fs-title="Enter or Select an Audio Filename which has a  .wav, .ogg, .mp2, .mp3 or .flac extension" editable="0">
+        <variable>SoundFile</variable>
+        <default>No_Selection_Made</default>
+        
+        <input>FILE=$(basename "$SoundFile"); if [[ "$FILE" != *?.mp3 ]] && [[ "$FILE" != *?.wav ]] && [[ "$FILE" != *?.ogg ]] && [[ "$FILE" != *?.flac ]] && [[ "$FILE" != *?.mp2 ]]; then echo "###__Invalid_Filename_Entered__###"; fi</input>
+        
+        <action>refresh:SoundFile</action>      
+        <action function="enable">StartRec</action>
+        <action condition="command_is_true( [ \"$SoundFile\" = \"###__Invalid_Filename_Entered__###\" ] && echo true )">disable:StartRec</action>
+    </entry>
+
+    </hbox>    
+    </frame>
+  <frame                            Recording Controls>
+  <hbox homogeneous="true" space-expand="true">
+   <hbox>
+      <button tooltip-text="Be sure you have selected both an audio source and a valid output file for your recording. If either are incorrect go back and re-select before commencing the recording.">
+        <label>Start Recording</label>
+        <height>22</height>
+        <visible>false</visible>
+        <variable>StartRec</variable>
+        <input file>"'$ICONS'/record.png"</input>
+        
+        <action>pactl set-source-mute ${SelectedSource} false</action>
+        <action>parec -d $SelectedSource | sox  -S -V3 -t raw  -r 44.1k -e signed-integer -Lb 16 -c 2 - "$SoundFile" silence -l 1 0.0 0.1%  -1 0.5 0.1% &</action>
+        
+        <action>close:TABLE_DIALOG</action>
+        <action function="disable">StartRec</action>
+        <action function="enable">StopRec</action>
+        <action function="disable">SourceSelect</action>
+        <action function="disable">FileSelect</action>
+        <action function="enable">PauseResume</action>
+        <action function="disable">CloseApp</action>
+        <action>enable:TMR</action>
+        <action type="enable">PIX</action>
+        <action type="enable">PauseResume</action>
+      </button>
+        <timer milliseconds="true" interval="1000" visible="false" sensitive="false">
+            <variable>TMR</variable>
+            <action>funcOnOff</action>
+            <action>refresh:PIX</action>
+        </timer>
+        <pixmap>
+                <visible>disabled</visible>
+                <width>18</width>
+                <height>18</height>
+                <variable export="false">PIX</variable>
+                <input file>'"$TMPDIR"'/PIX.png</input>
+        </pixmap> 
+         
+        <togglebutton tooltip-text="To Pause a recording press this button and to Resume recording press it again. A 0.5 sec gap of silence will be introduced at each Pause.">
+            <input file>'"$TMPDIR"'/togbut1.png</input>
+            <height>22</height>
+            <default>false</default>
+            <label>Pause/Resume</label>
+            <visible>false</visible>
+            <variable>PauseResume</variable>           
+            <action>ln -sf '"$TMPDIR"'/$PauseResume.png '"$TMPDIR"'/togbut1.png</action>
+                            
+            <action>if true disable:TMR</action>
+            <action>if false enable:TMR</action>
+            <action>if true killall -SIGSTOP parec</action> 
+            <action>if true disable:StopRec</action>        
+            <action>if true pactl set-source-mute ${SelectedSource} true</action>
+            <action>if false killall -SIGCONT parec</action> 
+            <action>if false enable:StopRec</action>                
+            <action>if false pactl set-source-mute ${SelectedSource} false</action>
+            <action function="refresh">PauseResume</action>
+        </togglebutton>
+        
+      <button tooltip-text="Select '"'Stop Recording'"' to stop the recording and have the recorded audio processed and saved in your selected file. Please allow a little time for post processing of the audio." >
+        <label>Stop Recording</label>
+        <visible>false</visible>
+        <variable>StopRec</variable>
+        <height>22</height>
+        <input file>"'$ICONS'/stop.png"</input>
+        <action>"kill $(pgrep parec)"</action>
+        <action function="enable">StartRec</action>
+        <action function="disable">StopRec</action>
+        
+        <action function="disable">PauseResume</action>
+        <action function="enable">SourceSelect</action>
+        <action function="enable">CloseApp</action>
+        <action function="enable">FileSelect</action>
+        <action>disable:TMR</action>
+        <action>ln -sf "'$ICONS'/small-red.png" "'$TMPDIR'"/PIX.png</action>
+        <action>refresh:PIX</action>
+        <action type="disable">PIX</action>
+      </button>  
+
+      <button tooltip-text=" Select '"'Close Application'"' to exit.  Please use this button and not the '"'X'"' of the window, for best results">
+        <label>Close Application</label>
+        <variable>CloseApp</variable>
+        <height>22</height>
+        <input file>"'$ICONS'/eject.png"</input>
+        <action type="exit">exit 0</action>
+      </button>         
+   </hbox>   
+   </hbox>
+  </frame>  
+<hseparator></hseparator>
+<hseparator></hseparator>
+<hseparator></hseparator>
+</vbox> 
+</window>
+'
+gtkdialog --program=MAIN_DIALOG
+#############################
+# Remove all temporary files and kill recording processes regardless the use of 'X' or the close button.
+rm -rf $TMPDIR/flagOnOff $TMPDIR/false.png $TMPDIR/PIX.png $TMPDIR/true.png $TMPDIR/togbut1.png $TMPDIR/Description $TMPDIR/DeviceList
+killall -SIGCONT parec
+kill $(pgrep parec)
+#############################

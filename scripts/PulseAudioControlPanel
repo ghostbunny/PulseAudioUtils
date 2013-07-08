@@ -1,0 +1,159 @@
+#!/bin/bash
+set -x # Uncomment to display verbose output from a terminal launch
+
+# vi/vim: set tabstop=4
+
+# This file is free software; you can redistribute it and/or modify it
+# under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+#
+
+#############################
+# 
+# Version: 0.1.
+# clareoldie@gmail.com GPLv2 or later
+# Depends on:  pavucontrol
+#              qpaeq (pulseaudio-equalizer-module)
+#	       paprefs
+#              PulseAudioMixer
+#              PulseAudioRecorder
+#
+
+#############################
+# 
+# Set up default directory for recordings and a default file.
+# 
+Encoding=UTF-8
+export ICONS="/share/icons/PulseAudioUtils/"
+export TMPDIR=$HOME/tmp/.Pulse_Audio_Recorder/
+export FILE_ON_OFF="$TMPDIR"/flagOnOff1
+###############################
+# Set the initial indicator of the button depending on the mixer status
+if [ "$(pactl list | grep -B 2 '=Mixer1')" ]
+then
+ln -sf "$ICONS/mixer-stop.png" "$TMPDIR"/PIX1.png
+touch "$TMPDIR"/flagOnOff1
+else
+ln -sf "$ICONS/mixer-start.png" "$TMPDIR"/PIX1.png
+fi
+###############################
+funcOnOff() {
+        if [ -f "$FILE_ON_OFF" ]
+        then
+                ln -sf "$ICONS/mixer-start.png" "$TMPDIR"/PIX1.png
+                rm -f "$FILE_ON_OFF"
+        else
+                ln -sf "$ICONS/mixer-stop.png" "$TMPDIR"/PIX1.png
+                echo > "$FILE_ON_OFF"
+        fi
+}; export -f funcOnOff
+###############################
+# The main working application
+export MAIN_DIALOG='
+<window  icon-name="pulseaudio" window_position="1" title="Pulse Audio Control Panel">
+	<vbox>
+		<hseparator></hseparator>
+		<hseparator></hseparator>
+		<hseparator></hseparator>
+
+		<frame Pulse Audio Basic Functions >
+			<hbox homogeneous="true" space-expand="true">
+				<hbox>
+					<vbox>
+						<button tooltip-text=" This utility allows the user to not only alter volumes but also to determine to which device a sound stream is sent, amongst other functions. It is well worth the effort to familiarise yourself with this utility.">
+							<label>PaVolControl</label>
+							<height>22</height>
+							<input file>"/usr/share/icons/pavucontrol.png"</input>
+							<action>pavucontrol &</action>
+						</button>
+					</vbox>
+        
+					<vbox>
+						<button tooltip-text="Launch the PulseAudio Equalizer. This displays as many sliders as will fit in the display ... so enlarging the window horizontally causes many more sliders to become available.">
+							<label>Equalizer</label>
+							<height>22</height>
+							<input file>"'$ICONS'/equalizer.png"</input>
+							<action>qpaeq &</action>
+						</button>
+						  
+					</vbox>
+
+
+					<vbox>
+						<button tooltip-text="PulseAudio Preferences provides a means to set up audio over the network, multicasting and sending simultaneous output to all connected sound sink devices.">
+							<label>PAPrefs    </label>
+							<height>22</height>
+							<input file>"/usr/share/icons/paprefs.png"</input>
+							<action>paprefs &</action>
+						</button>
+					</vbox>
+				</hbox>
+			</hbox>
+		</frame>
+
+
+
+		<hseparator></hseparator>
+		<hseparator></hseparator> 
+
+		
+
+		<frame PCLinuxOS Extra Functions >
+			<hbox homogeneous="true" space-expand="true">
+				<hbox>
+					<vbox>
+						<button tooltip-text="This does all the settings to provide a two input mixer and a mixed output which can be recorded. You can mix any two sound sources available in PulseAudio. Use the PulseAudio Volume Control utility to manage the mixer.">
+							<label>"'"$ToggleLabel"'"</label>
+							<height>22</height>
+							<variable>Toggle</variable>           
+							<input file>"'$TMPDIR'/PIX1.png"</input>
+							<action>funcOnOff</action>
+							<action>refresh:PIX</action>
+							<action>refresh:Toggle</action>
+							<action>/usr/bin/PulseAudioMixer</action>  
+						</button>
+					</vbox>
+
+					<vbox>
+						<button tooltip-text="This allows you to record any sound that is being handled by PulseAudio. It can be used to record the mixer output, or any sound stream being played.">
+							<label>Audio Recorder</label>
+							<height>22</height>
+							<input file>"'$ICONS'/record.png"</input>
+							<action>/usr/bin/PulseAudioRecorder &</action>
+						</button>
+					</vbox>
+
+					<vbox>
+						<button tooltip-text="Close this Control Panel">
+							<label>Quit</label>
+							<height>22</height>
+							<input file>"'$ICONS'/eject.png"</input>
+						</button>
+					</vbox>
+
+				</hbox>   
+			</hbox>
+		</frame> 
+		<hseparator></hseparator>
+		<hseparator></hseparator>
+		<hseparator></hseparator>
+	</vbox> 
+</window>
+'
+
+export GUI="`echo "$MAIN_DIALOG" | sed -e 's/##.*//'`" 
+gtkdialog -p GUI
+rm -f "$TMPDIR"/flagOnOff1  "$TMPDIR"/PIX1.png
+exit 0
+
+

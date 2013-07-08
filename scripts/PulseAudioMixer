@@ -1,0 +1,46 @@
+#!/bin/bash
+#
+### This script sets up two loopback virtual devices and a null sink
+### which can then be used to mix inputs and record the result.
+### It requires a functioning PulseAudio installation and also
+### PulseAudio Volume Control to manage the streams.
+# License: GPL 2 or later
+# Author: clareoldie
+# Date: June 1st 2012
+#
+set -x
+#
+unload-modules () {
+for i in $(pactl list | grep -B 2 '=Mixer1' | grep 'Module #' | cut -d '#' -f 2-)
+do
+pactl unload-module $i
+done
+}
+
+load-modules () {
+### Load required modules
+pactl load-module module-null-sink sink_name=Mixer1 sink_properties="device.description='Mixer#1'"
+pactl load-module module-loopback sink=Mixer1
+pactl load-module module-loopback sink=Mixer1
+}
+
+test-modules () {
+## If the modules exist 0$?=0 then unload them, else load them.
+pactl list | grep -B 1 'Name: module-loopback'
+if [ "$?" = "0" ]
+then
+unload-modules
+exit 0
+fi
+pactl list | grep -B 1 'Name: module-null-sink'
+if [ "$?" = "0" ]
+then
+unload-modules
+exit 0
+else
+load-modules
+fi
+}
+
+### Main Programme
+test-modules

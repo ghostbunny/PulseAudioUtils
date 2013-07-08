@@ -1,0 +1,24 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Categories=Settings;GTK;System;X-MandrivaLinux-System-Configuration;X-MandrivaLinux-Multimedia-Sound;
+Comment[en_GB]=
+Comment=
+Encoding=UTF-8
+Exec=PulseAudioControlPanel
+GenericName[en_GB]=PulseAudio Control Panel
+GenericName=PulseAudio Control Panel
+Icon=/usr/share/icons/PulseAudioUtils/configure-pa-orange.png
+MimeType=
+Name[en_GB]=PulseAudio ControlPanel
+Name=PulseAudio ControlPanel
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+Version=1.0
+X-DBUS-ServiceName=
+X-DBUS-StartupType=
+X-Desktop-File-Install-Version=0.21
+X-KDE-SubstituteUID=false
+X-KDE-Username=
