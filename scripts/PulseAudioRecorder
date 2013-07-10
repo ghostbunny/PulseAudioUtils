@@ -25,7 +25,7 @@
 # Set up default directory for recordings and a default file.
 # 
 Encoding=UTF-8
-mkdir -p $HOME/PulseAudioRecorder/  
+mkdir -p $HOME/PulseAudioRecorder  
 touch $HOME/PulseAudioRecorder/default.wav 
 #############################
 # i18n
@@ -33,8 +33,8 @@ export TEXTDOMAIN=PulseAudioRecorder
 export TEXTDOMAINDIR="/usr/share/locale" 
 #############################
 # Timer related
-export ICONS="/usr/share/icons/PulseAudioUtils/"
-export TMPDIR=$HOME/tmp/.Pulse_Audio_Recorder/
+export ICONS="/usr/share/icons/PulseAudioUtils"
+export TMPDIR=$HOME/tmp/.Pulse_Audio_Recorder
 mkdir -p "$TMPDIR"
 export FILE_ON_OFF="$TMPDIR"/flagOnOff
 rm -f "$FILE_ON_OFF"
@@ -67,9 +67,9 @@ ln -sf "$TMPDIR"/false.png "$TMPDIR"/togbut1.png
 # "Source" and "Name:" would have to be translated I believe.
 ############################
 export TABLE_DIALOG='
-<window icon-name="gtk-media-record" title='$"Select the Device from whose Sound Stream you wish to Record"'>
+<window icon-name="gtk-media-record" title="'$"Select the Device from whose Sound Stream you wish to Record"'">
 <vbox>
-  <hbox tooltip-text="Select the device.">
+  <hbox tooltip-text='$"Select the device."'>
       <table column-visible="false|true" selected-row="0" selection-mode="2" sort-function="1" exported-column="0">
          <variable>SelectedSource</variable>
          <width>750</width>
@@ -103,14 +103,14 @@ export TABLE_DIALOG='
 ###############################
 # The main working application
 export MAIN_DIALOG='
-<window  icon-name="gtk-media-record" window_position="1" title='$"  Pulse Audio Recorder"'>
+<window  icon-name="gtk-media-record" window_position="1" title="'$"  Pulse Audio Recorder"'">
 <vbox>
 <hseparator></hseparator>
 <hseparator></hseparator>
 <hseparator></hseparator>
-  <frame                            Select Source Device and Output Filename>          
+  <frame '$"                           Select Source Device and Output Filename"'>          
  <hbox>
-    <button tooltip-text="Select the device from which you wish to record ...  either an input device like a microphone or a monitor of the sound going to an output such as speakers.">
+    <button tooltip-text="'$"Select the device from which you wish to record ...  either an input device like a microphone or a monitor of the sound going to an output such as speakers."'">
         <label>'$"Select  Source  Device "'</label>
         <variable>SourceSelect</variable>
         <visible>enabled</visible>
@@ -118,24 +118,24 @@ export MAIN_DIALOG='
      </button>           
     <entry editable="0">
       <variable>SourceEntry</variable>
-      <default>No_Selection_Made</default>
+      <default>'$"No_Selection_Made"'</default>
       <input>cat "$TMPDIR"Description</input>
       <action function="enable">FileSelect</action> 
     </entry>   
  </hbox>    
  <hbox>      
-    <button tooltip-text='$"Here you select the output file name for your saved audio. You may select an existing file, or type in the name of a new file to record to. It is very important that you include a file name and a file extension such as '"'.wav'"', '"'.ogg'"', '"'.flac'"', '"'.mp2'"' or '"'.mp3'"'. Should you enter an invalid filename you will not be able to record to it. Be aware ... if you select an existing file it WILL be overwritten without further warning."'>
+    <button tooltip-text="'$"Here you select the output file name for your saved audio. You may select an existing file, or type in the name of a new file to record to. It is very important that you include a file name and a file extension such as '.wav', '.ogg', '.flac', '.mp2' or '.mp3'. Should you enter an invalid filename you will not be able to record to it. Be aware ... if you select an existing file it WILL be overwritten without further warning."'">
         <label>'$"Select Output Filename"'</label>
         <visible>disabled</visible>
         <variable>FileSelect</variable>
         <action icon-name="gtk-media-record" type="fileselect">SoundFile</action>
     </button> 
    
-    <entry icon-name="gtk-media-record" fs-action="file" fs-folder="'$HOME'/PulseAudioRecorder/" fs-filters-mime="audio/*" fs-title='$"Enter or Select an Audio Filename which has a  .wav, .ogg, .mp2, .mp3 or .flac extension"' editable="0">
+    <entry icon-name="gtk-media-record" fs-action="file" fs-folder="'$HOME'/PulseAudioRecorder/" fs-filters-mime="audio/*" fs-title="'$"Enter or Select an Audio Filename which has a  .wav, .ogg, .mp2, .mp3 or .flac extension"'" editable="0">
         <variable>SoundFile</variable>
-        <default>No_Selection_Made</default>
+        <default>'$"No_Selection_Made"'</default>
         
-        <input>FILE=$(basename "$SoundFile"); if [[ "$FILE" != *?.mp3 ]] && [[ "$FILE" != *?.wav ]] && [[ "$FILE" != *?.ogg ]] && [[ "$FILE" != *?.flac ]] && [[ "$FILE" != *?.mp2 ]]; then echo "###__Invalid_Filename_Entered__###"; fi</input>
+        <input>FILE=$(basename "$SoundFile"); if [[ "$FILE" != *?.mp3 ]] && [[ "$FILE" != *?.wav ]] && [[ "$FILE" != *?.ogg ]] && [[ "$FILE" != *?.flac ]] && [[ "$FILE" != *?.mp2 ]]; then echo $"###__Invalid_Filename_Entered__###"; fi</input>
         
         <action>refresh:SoundFile</action>      
         <action function="enable">StartRec</action>
@@ -144,10 +144,10 @@ export MAIN_DIALOG='
 
     </hbox>    
     </frame>
-  <frame                            Recording Controls>
+  <frame '$"                           Recording Controls"'>
   <hbox homogeneous="true" space-expand="true">
    <hbox>
-      <button tooltip-text='$"Be sure you have selected both an audio source and a valid output file for your recording. If either are incorrect go back and re-select before commencing the recording."'>
+      <button tooltip-text="'$"Be sure you have selected both an audio source and a valid output file for your recording. If either are incorrect go back and re-select before commencing the recording."'">
         <label>'$"Start Recording"'</label>
         <height>22</height>
         <visible>false</visible>
@@ -181,7 +181,7 @@ export MAIN_DIALOG='
                 <input file>'"$TMPDIR"'/PIX.png</input>
         </pixmap> 
          
-        <togglebutton tooltip-text='$"To Pause a recording press this button and to Resume recording press it again. A 0.5 sec gap of silence will be introduced at each Pause."'>
+        <togglebutton tooltip-text="'$"To Pause a recording press this button and to Resume recording press it again. A 0.5 sec gap of silence will be introduced at each Pause."'">
             <input file>'"$TMPDIR"'/togbut1.png</input>
             <height>22</height>
             <default>false</default>
@@ -201,7 +201,7 @@ export MAIN_DIALOG='
             <action function="refresh">PauseResume</action>
         </togglebutton>
         
-      <button tooltip-text='$"Select '"'Stop Recording'"' to stop the recording and have the recorded audio processed and saved in your selected file. Please allow a little time for post processing of the audio."' >
+      <button tooltip-text="'$"Select 'Stop Recording' to stop the recording and have the recorded audio processed and saved in your selected file. Please allow a little time for post processing of the audio."'">
         <label>'$"Stop Recording"'</label>
         <visible>false</visible>
         <variable>StopRec</variable>
@@ -221,7 +221,7 @@ export MAIN_DIALOG='
         <action type="disable">PIX</action>
       </button>  
 
-      <button tooltip-text='$" Select '"'Close Application'"' to exit.  Please use this button and not the '"'X'"' of the window, for best results"'">
+      <button tooltip-text="'$" Select 'Close Application' to exit.  Please use this button and not the 'X' of the window, for best results"'">
         <label>'$"Close Application"'</label>
         <variable>CloseApp</variable>
         <height>22</height>

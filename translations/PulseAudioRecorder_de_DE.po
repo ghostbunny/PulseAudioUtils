@@ -3,45 +3,47 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: PulseAudioUtils 0.1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-10 20:47+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2013-07-10 20:43+0200\n"
+"PO-Revision-Date: 2013-07-10 20:44+0100\n"
+"Last-Translator: ghostbunny <hmhaase at pclinuxosusers dot de>\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
 
 #: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:70
 msgid "Select the Device from whose Sound Stream you wish to Record"
-msgstr ""
+msgstr "Wählen Sie das Gerät von dem Sie den Soundstream aufnehmen wollen."
 
 #: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:72
 msgid "Select the device."
-msgstr ""
+msgstr "Wählen Sie ein Gerät."
 
 #: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:77
 msgid ""
 "Name|                                     Click on this bar to sort the "
 "items below.  "
 msgstr ""
+"Name|                               Klicken Sie auf diese Leiste um die "
+"nachfolgenden Einträge zu sortieren.  "
 
 #: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:88
 msgid "Select Highlighted Entry and Close this Window"
-msgstr ""
+msgstr "Markierte Einträge auswählen und dieses Fenster schließen"
 
 #: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:106
 msgid "  Pulse Audio Recorder"
-msgstr ""
+msgstr "  Pulse Audio  Aufnahme"
 
 #: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:111
 msgid "                           Select Source Device and Output Filename"
 msgstr ""
+"             Wählen Sie ein Eingabegerät und den Namen der Ausgabedatei"
 
 #: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:113
 msgid ""
@@ -49,15 +51,17 @@ msgid ""
 "like a microphone or a monitor of the sound going to an output such as "
 "speakers."
 msgstr ""
+"Wählen Sie die Aufnahmequelle ... entweder ein Eingabegerät wie ein Mikrofon "
+"oder einen Soundmonitor, der seine Ausgabe an die Lautsprecher sendet."
 
 #: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:114
 msgid "Select  Source  Device "
-msgstr ""
+msgstr "Wählen Sie das Aufnahmegerät"
 
 #: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:121
 #: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:136
 msgid "No_Selection_Made"
-msgstr ""
+msgstr "Keine_Auswahl_vorgenommen"
 
 #: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:127
 msgid ""
@@ -68,20 +72,30 @@ msgid ""
 "will not be able to record to it. Be aware ... if you select an existing "
 "file it WILL be overwritten without further warning."
 msgstr ""
+"Hier wählen Sie den Namen der Ausgabedatei für Ihr zu speicherndes "
+"Audiomaterial. Sie können eine existierende Datei wählen oder den Namen "
+"einer neuen Datei angeben. Es ist sehr wichtig, dass Sie einen Dateinamen "
+"und eine Dateierweiterung wie '.wav', '.ogg', '.flac', '.mp2' oder '.mp3' "
+"angeben. Sollten Sie einen ungültigen Dateinamen eingeben, werden Sie nicht "
+"in der Lage sein etwas in dieser aufzunehmen. Beachten Sie, dass wenn Sie "
+"eine existierende Datei wählen, diese ohne weitere Warnung überschrieben "
+"wird."
 
 #: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:128
 msgid "Select Output Filename"
-msgstr ""
+msgstr "Ausgabedatei wählen"
 
 #: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:134
 msgid ""
 "Enter or Select an Audio Filename which has a  .wav, .ogg, .mp2, .mp3 or ."
 "flac extension"
 msgstr ""
+"Geben Sie einen Dateinamen an oder wählen Sie eine existierende Audiodatei "
+"mit der Endung .wav, .ogg, .mp2, .flac oder .mp3"
 
 #: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:147
 msgid "                           Recording Controls"
-msgstr ""
+msgstr "                         Aufnahmeeinstellungen"
 
 #: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:150
 msgid ""
@@ -89,20 +103,27 @@ msgid ""
 "your recording. If either are incorrect go back and re-select before "
 "commencing the recording."
 msgstr ""
+"Seien Sie sicher, dass Sie eine Audioquelle und eine gültige Ausgabedatei "
+"für Ihre Aufnahme gewählt haben. Wenn eines von beiden nicht korrekt ist "
+"gehen Sie zurück und wählen neue Einstellungen, bevor Sie die Aufnahme "
+"beginnen."
 
 #: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:151
 msgid "Start Recording"
-msgstr ""
+msgstr "Aufnahme Starten"
 
 #: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:184
 msgid ""
 "To Pause a recording press this button and to Resume recording press it "
 "again. A 0.5 sec gap of silence will be introduced at each Pause."
 msgstr ""
+"Zum Pausieren der Aufnahme drücken Sie diesen Knopf, um weiter aufzunehmen "
+"drücken Sie ihn erneut. 5 Sekunden Stille werden eingefügt, wenn 'Pause' "
+"gedrückt wird."
 
 #: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:188
 msgid "Pause/Resume"
-msgstr ""
+msgstr "Pause/Weiter"
 
 #: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:204
 msgid ""
@@ -110,17 +131,23 @@ msgid ""
 "processed and saved in your selected file. Please allow a little time for "
 "post processing of the audio."
 msgstr ""
+"Wählen Sie 'Aufnahme anhalten' um die Aufnahme anzuhalten und das "
+"aufgenommene Audiomaterial zu verarbeiten und in der gewählten Datei zu "
+"speichern. Bitte haben Sie etwas Geduld bei der Nachbearbeitung des "
+"Audiomaterials."
 
 #: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:205
 msgid "Stop Recording"
-msgstr ""
+msgstr "Aufnahme anhalten"
 
 #: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:224
 msgid ""
 " Select 'Close Application' to exit.  Please use this button and not the 'X' "
 "of the window, for best results"
 msgstr ""
+"Wählen Sie 'Programm beenden' zu beenden. Für beste Ergebnisse nutzen Sie "
+"bitte diesen Knopf and nicht das 'X' des Fensters."
 
 #: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:225
 msgid "Close Application"
-msgstr ""
+msgstr "Programm beenden"
