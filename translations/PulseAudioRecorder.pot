@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-10 20:47+0200\n"
+"POT-Creation-Date: 2013-07-11 18:41+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,7 +22,10 @@ msgid "Select the Device from whose Sound Stream you wish to Record"
 msgstr ""
 
 #: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:72
-msgid "Select the device."
+msgid ""
+"Select the device: Choose from the list of possible devices from which to "
+"record. Click the top bar to sort the items. After selecting an entry click "
+"the bottom bar."
 msgstr ""
 
 #: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:77

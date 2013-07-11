@@ -69,17 +69,17 @@ ln -sf "$TMPDIR"/false.png "$TMPDIR"/togbut1.png
 export TABLE_DIALOG='
 <window icon-name="gtk-media-record" title="'$"Select the Device from whose Sound Stream you wish to Record"'">
 <vbox>
-  <hbox tooltip-text='$"Select the device."'>
+  <hbox tooltip-text="'$"Select the device: Choose from the list of possible devices from which to record. Click the top bar to sort the items. After selecting an entry click the bottom bar."'">
       <table column-visible="false|true" selected-row="0" selection-mode="2" sort-function="1" exported-column="0">
          <variable>SelectedSource</variable>
          <width>750</width>
          <height>200</height>
          <label>'$"Name|                                     Click on this bar to sort the items below.  "'</label>
          
-         <input>pactl list| grep -A3 -E "Source #"| grep -A1 -E "Name: "| cut -d : -f2 | tr '"'\n'"' '"'|'"' | sed '"'s/|--|/\n/g'"' | sed  '"'s/| / | Microphone of /'"' | sed  '"'s/| Microphone of Monitor of/ |    Monitor of the Output to/'"' | tee "$TMPDIR"DeviceList</input>
+         <input>pactl list| grep -A3 -E "Source #"| grep -A1 -E "Name: "| cut -d : -f2 | tr '"'\n'"' '"'|'"' | sed '"'s/|--|/\n/g'"' | sed  '"'s/| / | Microphone of /'"' | sed  '"'s/| Microphone of Monitor of/ |    Monitor of the Output to/'"' | tee "$TMPDIR"/DeviceList</input>
          
          <action type="refresh">SelectedEntry</action>
-        <action>grep "$SelectedSource" "$TMPDIR"DeviceList | cut -d "|" -f2 > "$TMPDIR"Description</action>
+        <action>grep "$SelectedSource" "$TMPDIR"/DeviceList | cut -d "|" -f2 > "$TMPDIR"/Description</action>
          <action type="refresh">SourceEntry</action>
       </table>
   </hbox>
@@ -119,7 +119,7 @@ export MAIN_DIALOG='
     <entry editable="0">
       <variable>SourceEntry</variable>
       <default>'$"No_Selection_Made"'</default>
-      <input>cat "$TMPDIR"Description</input>
+      <input>cat "$TMPDIR"/Description</input>
       <action function="enable">FileSelect</action> 
     </entry>   
  </hbox>    
