@@ -32,6 +32,15 @@ touch $HOME/PulseAudioRecorder/default.wav
 export TEXTDOMAIN=PulseAudioRecorder
 export TEXTDOMAINDIR="/usr/share/locale" 
 #############################
+# Set up language variables
+#
+export Source=$"Source #"
+export Name=$"Name: "
+export Microphone=$"Microphone of"
+export Monitor=$"Monitor of"
+export MicMonitor=$"Microphone of Monitor of"
+#
+#############################
 # Timer related
 export ICONS="/usr/share/icons/PulseAudioUtils"
 export TMPDIR=$HOME/tmp/.Pulse_Audio_Recorder
@@ -76,10 +85,10 @@ export TABLE_DIALOG='
          <height>200</height>
          <label>'$"Name|                                     Click on this bar to sort the items below.  "'</label>
          
-         <input>pactl list| grep -A3 -E "Source #"| grep -A1 -E "Name: "| cut -d : -f2 | tr '"'\n'"' '"'|'"' | sed '"'s/|--|/\n/g'"' | sed  '"'s/| / | Microphone of /'"' | sed  '"'s/| Microphone of Monitor of/ |    Monitor of the Output to/'"' | tee "$TMPDIR"/DeviceList</input>
+         <input>pactl list| grep -A3 -E "$Source" | grep -A1 -E "$Name" | cut -d : -f2 | tr '"'\n'"' '"'|'"' | sed '"'s/|--|/\n/g'"' |sed  '"'s/| / | "$Microphone" /'"'  | sed  '"'s/"$MicMonitor" /      "$Monitor" /'"' |   tee "$TMPDIR"/DeviceList</input>
          
          <action type="refresh">SelectedEntry</action>
-        <action>grep "$SelectedSource" "$TMPDIR"/DeviceList | cut -d "|" -f2 > "$TMPDIR"/Description</action>
+         <action>grep "$SelectedSource" "$TMPDIR"/DeviceList | cut -d "|" -f2 > "$TMPDIR"/Description</action>
          <action type="refresh">SourceEntry</action>
       </table>
   </hbox>

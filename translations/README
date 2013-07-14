@@ -1,0 +1,15 @@
+
+The correctness of working of the PulseAudioRecorder depends on the translation
+of pactl in the specific language.
+
+The strings
+Source #
+Name: 
+Microphone of
+Monitor of
+Microphone of Monitor of
+
+have to be checked against the output of "pactl list"
+If the output is not translated in your languages copy the 
+English text into the translation or don't write anything
+into the translation for this string.
