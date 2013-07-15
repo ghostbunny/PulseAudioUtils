@@ -1,12 +1,28 @@
 #!/bin/bash
 #
+# This file is free software; you can redistribute it and/or modify it
+# under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+#
+#############################
 ### This script sets up two loopback virtual devices and a null sink
 ### which can then be used to mix inputs and record the result.
 ### It requires a functioning PulseAudio installation and also
 ### PulseAudio Volume Control to manage the streams.
+# Version: 0.1.1
 # License: GPL 2 or later
-# Author: clareoldie
-# Date: June 1st 2012
+# Author: clareoldie  <clareoldie@gmail.com>
+# Date: Jul 15 2013
 #
 set -x
 #

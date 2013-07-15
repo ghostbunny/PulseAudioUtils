@@ -17,7 +17,9 @@
 #############################
 # 
 # Version: 0.1.1
-# clareoldie@gmail.com GPLv2 or later
+# License: GPLv2 or later
+# Author:  clareoldie <clareoldie@gmail.com>
+# Date:	   Jul 15 2013
 # Depends on Sox and Pulse Audio being installed and properly working.
 #
 #############################
@@ -38,7 +40,7 @@ export Source=$"Source #"
 export Name=$"Name: "
 export Microphone=$"Microphone of"
 export Monitor=$"Monitor of"
-export MicMonitor=$"Microphone of Monitor of"
+export MicMonitor="$Microphone $Monitor"
 #
 #############################
 # Timer related

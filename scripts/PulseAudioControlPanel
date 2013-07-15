@@ -21,7 +21,9 @@ set -x # Uncomment to display verbose output from a terminal launch
 #############################
 # 
 # Version: 0.1.1
-# clareoldie@gmail.com GPLv2 or later
+# License: GPLv2 or later
+# Author:  clareoldie <clareoldie@gmail.com>
+# Date:    Jul 15 2013
 # Depends on:  pavucontrol
 #              qpaeq (pulseaudio-equalizer-module)
 #	       paprefs
