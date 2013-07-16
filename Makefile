@@ -4,20 +4,12 @@ help:
 		      
 
 install:
-	RECTRANS=$(ls translations/PulseAudioRecorder*.po)
-	for i in $RECTRANS; do
-		LANGTARGET=$(echo "$i" | sed -e 's/PulseAudioRecorder_//g' | sed -e 's/\.po//g')
-		mkdir -p $(DESTDIR)$(PREFIX)/locale/$LANGTARGET/LC_MESSAGES
-		msgfmt translations/$i -o $(DESTDIR)$(PREFIX)/locale/$LANGTARGET/LC_MESSAGES/PulseAudioRecorder.mo
-	done
-
-	PANELTRANS=$(ls translations/PulseAudioControlPanel*.po)
-	for i in $PANELTRANS; do
-		LANGTARGET=$(echo "$i" | sed -e 's/PulseAudioControlPanel_//g' | sed -e 's/\.po//g')
-		mkdir -p $(DESTDIR)$(PREFIX)/locale/$LANGTARGET/LC_MESSAGES
-		msgfmt translations/$i -o $(DESTDIR)$(PREFIX)/locale/$LANGTARGET/LC_MESSAGES/PulseAudioControlPanel.mo
-	done
-
+	# German 
+	mkdir -p $(DESTDIR)$(PREFIX)/share/locale/de/LC_MESSAGES
+	msgfmt translations/PulseAudioRecorder_de_DE.po -o $(DESTDIR)$(PREFIX)/share/locale/de/LC_MESSAGES/PulseAudioRecorder.mo
+	mkdir -p $(DESTDIR)$(PREFIX)/share/locale/de/LC_MESSAGES
+	msgfmt translations/PulseAudioControlPanel_de_DE.po -o $(DESTDIR)$(PREFIX)/share/locale/de/LC_MESSAGES/PulseAudioControlPanel.mo
+	
 	mkdir -p $(DESTDIR)$(PREFIX)/share/icons/PulseAudioUtils/
 	cp icons/* $(DESTDIR)$(PREFIX)/share/icons/PulseAudioUtils/
 	mkdir -p $(DESTDIR)$(PREFIX)/bin/
