@@ -7,7 +7,6 @@ Source #
 Name: 
 Microphone of
 Monitor of
-Microphone of Monitor of
 
 have to be checked against the output of "pactl list"
 If the output is not translated in your languages copy the 
