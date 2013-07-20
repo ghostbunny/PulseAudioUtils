@@ -236,7 +236,7 @@ export MAIN_DIALOG='
         <label>'$"Close Application"'</label>
         <variable>CloseApp</variable>
         <height>22</height>
-        <input file>"'$ICONS'/eject.png"</input>
+        <input file>"'$ICONS'/eject_recorder.png"</input>
         <action type="exit">exit 0</action>
       </button>         
    </hbox>   
