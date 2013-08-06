@@ -4,15 +4,23 @@ help:
 		      
 
 install:
+	## Translations
 	# German 
 	mkdir -p $(DESTDIR)$(PREFIX)/share/locale/de/LC_MESSAGES
 	msgfmt translations/PulseAudioRecorder_de_DE.po -o $(DESTDIR)$(PREFIX)/share/locale/de/LC_MESSAGES/PulseAudioRecorder.mo
-	mkdir -p $(DESTDIR)$(PREFIX)/share/locale/de/LC_MESSAGES
 	msgfmt translations/PulseAudioControlPanel_de_DE.po -o $(DESTDIR)$(PREFIX)/share/locale/de/LC_MESSAGES/PulseAudioControlPanel.mo
 
+	# Greek
+	mkdir -p $(DESTDIR)$(PREFIX)/share/locale/el_GR/LC_MESSAGES
+	msgfmt translations/PulseAudioRecorder_el_GR.po -o $(DESTDIR)$(PREFIX)/share/locale/el_GR/LC_MESSAGES/PulseAudioRecorder.mo
+	msgfmt translations/PulseAudioControlPanel_el_GR.po -o $(DESTDIR)$(PREFIX)/share/locale/el_GR/LC_MESSAGES/PulseAudioControlPanel.mo
+	
+	# icons
 	mkdir -p $(DESTDIR)$(PREFIX)/share/icons/PulseAudioUtils/
 	cp icons/* $(DESTDIR)$(PREFIX)/share/icons/PulseAudioUtils/
 	cp icons/eject.png $(DESTDIR)$(PREFIX)/share/icons/PulseAudioUtils/eject_recorder.png
+	
+	# scripts + desktop files
 	mkdir -p $(DESTDIR)$(PREFIX)/bin/
 	mkdir -p $(DESTDIR)$(PREFIX)/share/applications/
 	cp scripts/* $(DESTDIR)$(PREFIX)/bin/

@@ -17,7 +17,6 @@ set -x # Uncomment to display verbose output from a terminal launch
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 #
-
 #############################
 # 
 # Version: 0.1.1
@@ -30,7 +29,6 @@ set -x # Uncomment to display verbose output from a terminal launch
 #              PulseAudioMixer
 #              PulseAudioRecorder
 #
-
 #############################
 # 
 # Set up default directory for recordings and a default file.
@@ -39,6 +37,7 @@ Encoding=UTF-8
 export ICONS="/usr/share/icons/PulseAudioUtils"
 export TMPDIR=$HOME/tmp/.Pulse_Audio_Recorder
 export FILE_ON_OFF="$TMPDIR"/flagOnOff1
+export ToggleLabel=$"Mixer On/Off"
 ###############################
 #
 # i18n
@@ -52,19 +51,20 @@ mkdir -p $TMPDIR
 # Set the initial indicator of the button depending on the mixer status
 if [ "$(pactl list | grep -B 2 '=Mixer1')" ]
 then
-ln -sf "$ICONS"/"mixer-stop.png" "$TMPDIR"/PIX1.png
+ln -sf "$ICONS"/"stop.png" "$TMPDIR"/PIX1.png
 touch "$TMPDIR"/flagOnOff1
+STATE="true"
 else
-ln -sf "$ICONS"/"mixer-start.png" "$TMPDIR"/PIX1.png
+ln -sf "$ICONS"/"start.png" "$TMPDIR"/PIX1.png
 fi
 ###############################
 funcOnOff() {
         if [ -f "$FILE_ON_OFF" ]
         then
-                ln -sf "$ICONS"/"mixer-start.png" "$TMPDIR"/PIX1.png
+                ln -sf "$ICONS"/"start.png" "$TMPDIR"/PIX1.png
                 rm -f "$FILE_ON_OFF"
         else
-                ln -sf "$ICONS"/"mixer-stop.png" "$TMPDIR"/PIX1.png
+                ln -sf "$ICONS"/"stop.png" "$TMPDIR"/PIX1.png
                 echo > "$FILE_ON_OFF"
         fi
 }; export -f funcOnOff
@@ -123,16 +123,17 @@ export MAIN_DIALOG='
 			<hbox homogeneous="true" space-expand="true">
 				<hbox>
 					<vbox>
-						<button tooltip-text="'$"This does all the settings to provide a two input mixer and a mixed output which can be recorded. You can mix any two sound sources available in PulseAudio. Use the PulseAudio Volume Control utility to manage the mixer."'">
+						<togglebutton tooltip-text="'$"This does all the settings to provide a two input mixer and a mixed output which can be recorded. You can mix any two sound sources available in PulseAudio. Use the PulseAudio Volume Control utility to manage the mixer."'">
 							<label>"'"$ToggleLabel"'"</label>
 							<height>22</height>
-							<variable>Toggle</variable>           
+							<variable>Toggle</variable> 
+							<default>"'"$STATE"'"</default>           
 							<input file>"'$TMPDIR'/PIX1.png"</input>
 							<action>funcOnOff</action>
 							<action>refresh:PIX</action>
 							<action>refresh:Toggle</action>
 							<action>/usr/bin/PulseAudioMixer</action>  
-						</button>
+						</togglebutton>
 					</vbox>
 
 					<vbox>
