@@ -1,14 +1,13 @@
-#!/usr/bin/env xdg-open
-
 [Desktop Entry]
 Version=1.0
 Encoding=UTF-8
-Name=PulseAudioRecorder
+Name=PulseAudio Recorder
 GenericName=Pulse Audio Recorder
 Comment=Record from any audio stream handled by PulseAudio
 Exec=PulseAudioRecorder
-Icon=/usr/share/icons/PulseAudioUtils/mic.png
+Icon=/usr/share/icons/PulseAudioUtils/icons/mic-rec.png
 StartupNotify=true
 Type=Application
-Categories=Settings;GTK;System;X-MandrivaLinux-System-Configuration;X-MandrivaLinux-Multimedia-Sound;
+Categories=Audio;X-MandrivaLinux-Multimedia-Sound;
 X-Desktop-File-Install-Version=0.21
+Terminal=false

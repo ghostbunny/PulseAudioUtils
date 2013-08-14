@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-10 19:55+0200\n"
+"POT-Creation-Date: 2013-08-14 18:01+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,72 +17,76 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:72
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:41
+msgid "Mixer On/Off"
+msgstr ""
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:75
 msgid "Pulse Audio Control Panel"
 msgstr ""
 
-#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:78
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:81
 msgid "Pulse Audio Basic Functions"
 msgstr ""
 
-#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:82
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:85
 msgid ""
 " This utility allows the user to not only alter volumes but also to "
 "determine to which device a sound stream is sent, amongst other functions. "
 "It is well worth the effort to familiarise yourself with this utility."
 msgstr ""
 
-#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:83
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:86
 msgid "PaVolControl"
 msgstr ""
 
-#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:91
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:94
 msgid ""
 "Launch the PulseAudio Equalizer. This displays as many sliders as will fit "
 "in the display ... so enlarging the window horizontally causes many more "
 "sliders to become available."
 msgstr ""
 
-#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:92
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:95
 msgid "Equalizer"
 msgstr ""
 
-#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:102
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:105
 msgid ""
 "PulseAudio Preferences provides a means to set up audio over the network, "
 "multicasting and sending simultaneous output to all connected sound sink "
 "devices."
 msgstr ""
 
-#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:103
-msgid "PAPrefs    "
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:106
+msgid "PaPrefs    "
 msgstr ""
 
-#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:120
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:123
 msgid "PCLinuxOS Extra Functions"
 msgstr ""
 
-#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:124
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:127
 msgid ""
 "This does all the settings to provide a two input mixer and a mixed output "
 "which can be recorded. You can mix any two sound sources available in "
 "PulseAudio. Use the PulseAudio Volume Control utility to manage the mixer."
 msgstr ""
 
-#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:137
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:141
 msgid ""
 "This allows you to record any sound that is being handled by PulseAudio. It "
 "can be used to record the mixer output, or any sound stream being played."
 msgstr ""
 
-#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:138
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:142
 msgid "Audio Recorder"
 msgstr ""
 
-#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:146
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:150
 msgid "Close this Control Panel"
 msgstr ""
 
-#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:147
-msgid "Quit"
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:151
+msgid "Close"
 msgstr ""

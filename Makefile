@@ -17,9 +17,10 @@ install:
 	
 	# icons
 	mkdir -p $(DESTDIR)$(PREFIX)/share/icons/PulseAudioUtils/
-	cp icons/* $(DESTDIR)$(PREFIX)/share/icons/PulseAudioUtils/
-	cp icons/eject.png $(DESTDIR)$(PREFIX)/share/icons/PulseAudioUtils/eject_recorder.png
-	
+	mkdir -p $(DESTDIR)$(PREFIX)/share/PulseAudioUtils/
+	cp icons/* $(DESTDIR)$(PREFIX)/share/PulseAudioUtils/
+	ln -s $(DESTDIR)$(PREFIX)/share/PulseAudioUtils/icons#1 $(DESTDIR)$(PREFIX)/share/icons/PulseAudioUtils/icons
+		
 	# scripts + desktop files
 	mkdir -p $(DESTDIR)$(PREFIX)/bin/
 	mkdir -p $(DESTDIR)$(PREFIX)/share/applications/

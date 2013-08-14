@@ -19,10 +19,10 @@
 ### which can then be used to mix inputs and record the result.
 ### It requires a functioning PulseAudio installation and also
 ### PulseAudio Volume Control to manage the streams.
-# Version: 0.1.1
-# License: GPL 2 or later
+# Version: 0.2.0
+# License: GPL 2
 # Author: clareoldie  <clareoldie@gmail.com>
-# Date: Jul 15 2013
+# Date: Aug 11 2013
 #
 set -x
 #

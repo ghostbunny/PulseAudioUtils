@@ -7,37 +7,37 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PulseAudioRecorder\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-16 22:56+0200\n"
-"PO-Revision-Date: 2013-08-05 12:01+0200\n"
-"Last-Translator: Antonis Komis <antonis.komis@gmail.com>\n"
+"POT-Creation-Date: 2013-08-14 18:01+0200\n"
+"PO-Revision-Date: 2013-08-14 18:07+0100\n"
+"Last-Translator: ghostbunny <hmhaase at pclinuxosusers dot de>\n"
 "Language-Team: Greek <antonis.komis@gmail.com>\n"
+"Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.4\n"
-"Language: el\n"
 
-#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:39
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:40
 msgid "Source #"
 msgstr "Source #"
 
-#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:40
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:41
 msgid "Name: "
 msgstr "Name: "
 
-#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:41
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:42
 msgid "Microphone of"
 msgstr "Microphone of"
 
-#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:42
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:43
 msgid "Monitor of"
 msgstr "Monitor of"
 
-#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:81
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:82
 msgid "Select the Device from whose Sound Stream you wish to Record"
 msgstr "Επιλέξτε τη Συσκευή της οποίας τη Ροή Ήχου θέλετε να Ηχογραφήσετε"
 
-#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:83
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:84
 msgid ""
 "Select the device: Choose from the list of possible devices from which to "
 "record. Click the top bar to sort the items. After selecting an entry click "
@@ -47,7 +47,7 @@ msgstr ""
 "οποία θέλετε να ηχογραφήσετε. Κάντε κλικ στην πάνω μπάρα για να ταξινομήσετε "
 "τα στοιχεία. Μετά την επιλογή κάντε κλικ στην κάτω μπάρα."
 
-#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:88
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:89
 msgid ""
 "Name|                                     Click on this bar to sort the "
 "items below.  "
@@ -55,20 +55,20 @@ msgstr ""
 "Όνομα|                                     Κάντε κλικ σε αυτή την μπάρα για "
 "να ταξινομήσετε τα στοιχεία παρακάτω.  "
 
-#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:99
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:100
 msgid "Select Highlighted Entry and Close this Window"
 msgstr "Επιλογή της Επισημασμένης Καταχώρησης και Κλείσιμο του Παραθύρου"
 
-#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:117
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:113
 msgid "  Pulse Audio Recorder"
 msgstr "  Εγγραφέας Pulse Audio"
 
-#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:122
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:118
 msgid "                           Select Source Device and Output Filename"
 msgstr ""
 "                           Επιλέξτε Πηγαία Συσκευή και Όνομα Αρχείου Εξόδου"
 
-#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:124
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:120
 msgid ""
 "Select the device from which you wish to record ...  either an input device "
 "like a microphone or a monitor of the sound going to an output such as "
@@ -78,16 +78,16 @@ msgstr ""
 "συσκευή εισόδου όπως ένα μικρόφωνο είτε από παρακολούθηση του ήχου που "
 "αναπαράγεται σε μια έξοδο όπως τα ηχεία."
 
-#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:125
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:121
 msgid "Select  Source  Device "
 msgstr "Επιλέξτε Πηγαία Συσκευή"
 
-#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:132
-#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:147
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:128
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:142
 msgid "No_Selection_Made"
 msgstr "Δεν_Έγινε_Επιλογή"
 
-#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:138
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:133
 msgid ""
 "Here you select the output file name for your saved audio. You may select an "
 "existing file, or type in the name of a new file to record to. It is very "
@@ -104,11 +104,11 @@ msgstr ""
 "δεν θα μπορείτε να ηχογραφήσετε σε αυτό. Προσοχή ... αν επιλέξετε ένα "
 "υπάρχον αρχείο θα αντικατασταθεί χωρίς περαιτέρω προειδοποίηση."
 
-#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:139
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:134
 msgid "Select Output Filename"
 msgstr "Επιλέξτε Όνομα Αρχείου Εξόδου"
 
-#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:145
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:140
 msgid ""
 "Enter or Select an Audio Filename which has a  .wav, .ogg, .mp2, .mp3 or ."
 "flac extension"
@@ -116,11 +116,11 @@ msgstr ""
 "Εισάγετε ή Επιλέξτε ένα Όνομα Αρχείου Ήχου το οποίο έχει κατάληξη .wav, ."
 "ogg, .mp2, .mp3 ή .flac"
 
-#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:158
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:153
 msgid "                           Recording Controls"
 msgstr "                           Στοιχεία Ελέγχου Ηχογράφησης"
 
-#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:161
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:156
 msgid ""
 "Be sure you have selected both an audio source and a valid output file for "
 "your recording. If either are incorrect go back and re-select before "
@@ -130,11 +130,11 @@ msgstr ""
 "εξόδου για την ηχογράφησή σας. Εάν οποιοδήποτε από τα δυο είναι λάθος, "
 "πηγαίνετε πίσω και επιλέξτε ξανά πριν ξεκινήσετε την ηχογράφηση."
 
-#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:162
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:157
 msgid "Start Recording"
 msgstr "Έναρξη Ηχογράφησης"
 
-#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:195
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:190
 msgid ""
 "To Pause a recording press this button and to Resume recording press it "
 "again. A 0.5 sec gap of silence will be introduced at each Pause."
@@ -142,11 +142,11 @@ msgstr ""
 "Πατήστε αυτό το κουμπί για Παύση της ηχογράφησης και πιέστε πάλι για "
 "Συνέχιση. Σε κάθε παύση γίνεται εισαγωγή ενός κενού 0,5 δευτερολέπτων."
 
-#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:199
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:194
 msgid "Pause/Resume"
 msgstr "Παύση/Συνέχιση"
 
-#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:215
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:210
 msgid ""
 "Select 'Stop Recording' to stop the recording and have the recorded audio "
 "processed and saved in your selected file. Please allow a little time for "
@@ -156,11 +156,11 @@ msgstr ""
 "γίνει επεξεργασία και αποθήκευση της ηχογράφησης στο επιλεγμένο αρχείο. "
 "Μπορεί να χρειαστεί λίγος χρόνος για την επεξεργασία του ήχου."
 
-#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:216
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:211
 msgid "Stop Recording"
 msgstr "Διακοπή Ηχογράφησης"
 
-#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:235
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:230
 msgid ""
 " Select 'Close Application' to exit.  Please use this button and not the 'X' "
 "of the window, for best results"
@@ -168,6 +168,6 @@ msgstr ""
 "Επιλέξτε 'Κλείσιμο Εφαρμογής' για έξοδο. Παρακαλώ χρησιμοποιείστε αυτό το "
 "κουμπί και όχι το 'X' στο παράθυρο για καλύτερα αποτελέσματα."
 
-#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:236
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:231
 msgid "Close Application"
 msgstr "Κλείσιμο Εφαρμογής"

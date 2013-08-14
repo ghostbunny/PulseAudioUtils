@@ -19,10 +19,11 @@ set -x # Uncomment to display verbose output from a terminal launch
 #
 #############################
 # 
-# Version: 0.1.1
-# License: GPLv2 or later
+# Version: 0.2.0
+# License: GPLv2
 # Author:  clareoldie <clareoldie@gmail.com>
-# Date:    Jul 15 2013
+# Contributors: ghostbunny, agmg, AS
+# Date:    Aug 11 2013
 # Depends on:  pavucontrol
 #              qpaeq (pulseaudio-equalizer-module)
 #	       paprefs
@@ -34,7 +35,7 @@ set -x # Uncomment to display verbose output from a terminal launch
 # Set up default directory for recordings and a default file.
 # 
 Encoding=UTF-8
-export ICONS="/usr/share/icons/PulseAudioUtils"
+export ICONS="/usr/share/icons/PulseAudioUtils/icons"
 export TMPDIR=$HOME/tmp/.Pulse_Audio_Recorder
 export FILE_ON_OFF="$TMPDIR"/flagOnOff1
 export ToggleLabel=$"Mixer On/Off"
@@ -51,27 +52,27 @@ mkdir -p $TMPDIR
 # Set the initial indicator of the button depending on the mixer status
 if [ "$(pactl list | grep -B 2 '=Mixer1')" ]
 then
-ln -sf "$ICONS"/"stop.png" "$TMPDIR"/PIX1.png
+ln -sf "$ICONS"/"mixer-off.png" "$TMPDIR"/PIX1.png
 touch "$TMPDIR"/flagOnOff1
 STATE="true"
 else
-ln -sf "$ICONS"/"start.png" "$TMPDIR"/PIX1.png
+ln -sf "$ICONS"/"mixer-on.png" "$TMPDIR"/PIX1.png
 fi
 ###############################
 funcOnOff() {
         if [ -f "$FILE_ON_OFF" ]
         then
-                ln -sf "$ICONS"/"start.png" "$TMPDIR"/PIX1.png
+                ln -sf "$ICONS"/"mixer-on.png" "$TMPDIR"/PIX1.png
                 rm -f "$FILE_ON_OFF"
         else
-                ln -sf "$ICONS"/"stop.png" "$TMPDIR"/PIX1.png
+                ln -sf "$ICONS"/"mixer-off.png" "$TMPDIR"/PIX1.png
                 echo > "$FILE_ON_OFF"
         fi
 }; export -f funcOnOff
 ###############################
 # The main working application
 export MAIN_DIALOG='
-<window  icon-name="pulseaudio" window_position="1" title="'$"Pulse Audio Control Panel"'">
+<window  icon-name="configure" window_position="1" title="'$"Pulse Audio Control Panel"'">
 	<vbox>
 		<hseparator></hseparator>
 		<hseparator></hseparator>
@@ -93,7 +94,7 @@ export MAIN_DIALOG='
 						<button tooltip-text="'$"Launch the PulseAudio Equalizer. This displays as many sliders as will fit in the display ... so enlarging the window horizontally causes many more sliders to become available."'">
 							<label>'$"Equalizer"'</label>
 							<height>22</height>
-							<input file>"'$ICONS'/equalizer.png"</input>
+							<input file>"'$ICONS'/equaliser.png"</input>
 							<action>qpaeq &</action>
 						</button>
 						  
@@ -102,7 +103,7 @@ export MAIN_DIALOG='
 
 					<vbox>
 						<button tooltip-text="'$"PulseAudio Preferences provides a means to set up audio over the network, multicasting and sending simultaneous output to all connected sound sink devices."'">
-							<label>'$"PAPrefs    "'</label>
+							<label>'$"PaPrefs    "'</label>
 							<height>22</height>
 							<input file>"/usr/share/icons/paprefs.png"</input>
 							<action>paprefs &</action>
@@ -147,9 +148,9 @@ export MAIN_DIALOG='
 
 					<vbox>
 						<button tooltip-text="'$"Close this Control Panel"'">
-							<label>'$"Quit"'</label>
+							<label>'$"Close"'</label>
 							<height>22</height>
-							<input file>"'$ICONS'/eject.png"</input>
+							<input file>"'$ICONS'/exit.png"</input>
 						</button>
 					</vbox>
 

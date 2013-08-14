@@ -16,10 +16,11 @@
 #
 #############################
 # 
-# Version: 0.1.1
-# License: GPLv2 or later
+# Version: 0.2.0
+# License: GPLv2
 # Author:  clareoldie <clareoldie@gmail.com>
-# Date:	   Jul 15 2013
+# Contributors: ghostbunny, agmg, AS
+# Date:	   Aug 11 2013
 # Depends on Sox and Pulse Audio being installed and properly working.
 #
 #############################
@@ -34,7 +35,7 @@ touch $HOME/PulseAudioRecorder/default.wav
 export TEXTDOMAIN=PulseAudioRecorder
 export TEXTDOMAINDIR="/usr/share/locale" 
 #############################
-# Set up language variables
+# Set up variables
 #
 export Source=$"Source #"
 export Name=$"Name: "
@@ -44,24 +45,25 @@ export MicMonitor="$Microphone $Monitor"
 #
 #############################
 # Timer related
-export ICONS="/usr/share/icons/PulseAudioUtils"
+#
+export ICONS="/usr/share/icons/PulseAudioUtils/icons"
 export TMPDIR=$HOME/tmp/.Pulse_Audio_Recorder
 mkdir -p "$TMPDIR"
 export FILE_ON_OFF="$TMPDIR"/flagOnOff
 rm -f "$FILE_ON_OFF"
-ln -sf "$ICONS/small-red.png" "$TMPDIR"/PIX.png   # small shows on launch
+ln -sf "$ICONS/red-small.png" "$TMPDIR"/PIX.png   # small shows on launch
 ##############################
 # This is to alternate between the two red icons when recording.
 # It is used in conjunction with the timer (TMR) and
 # with pixmap (PIX) to give a visual display when recording.
-##############################
+#
 funcOnOff() {
         if [ -f "$FILE_ON_OFF" ]
         then
-                ln -sf "$ICONS/small-red.png" "$TMPDIR"/PIX.png
+                ln -sf "$ICONS/red-small.png" "$TMPDIR"/PIX.png
                 rm -f "$FILE_ON_OFF"
         else
-                ln -sf "$ICONS/large-red.png" "$TMPDIR"/PIX.png
+                ln -sf "$ICONS/red-large.png" "$TMPDIR"/PIX.png
                 echo > "$FILE_ON_OFF"
         fi
 }; export -f funcOnOff
@@ -75,8 +77,7 @@ ln -sf "$TMPDIR"/false.png "$TMPDIR"/togbut1.png
 #############################
 # This is the dialog for listing and selecting the sources available
 # Note: Any translations will need to take the output of the pactl command into account.
-# "Source" and "Name:" would have to be translated I believe.
-############################
+# 
 export TABLE_DIALOG='
 <window icon-name="gtk-media-record" title="'$"Select the Device from whose Sound Stream you wish to Record"'">
 <vbox>
@@ -99,18 +100,13 @@ export TABLE_DIALOG='
          <label>'$"Select Highlighted Entry and Close this Window"'</label>
          <action type="refresh">SourceEntry</action>
          <action type="closewindow">SelectedSource</action>
+      <action function="enable">FileSelect</action>
      </button>     
   </vbox>
 </vbox>
 </window>
 '
-##############################
-# 
-# During 'Pause' the source is muted. This is to achieve absolute silence on the input.
-# This in turn allows the 'silence' options of Sox to be used to drop the silence during
-# the paused time. Anything greater than absolute silence was not guaranteed to work.
-# Microphones in particular can be noisey but muting the input drops that background noise.
-# 
+
 ###############################
 # The main working application
 export MAIN_DIALOG='
@@ -130,8 +126,7 @@ export MAIN_DIALOG='
     <entry editable="0">
       <variable>SourceEntry</variable>
       <default>'$"No_Selection_Made"'</default>
-      <input>cat "$TMPDIR"/Description</input>
-      <action function="enable">FileSelect</action> 
+      <input>cat "$TMPDIR"/Description</input> 
     </entry>   
  </hbox>    
  <hbox>      
@@ -227,7 +222,7 @@ export MAIN_DIALOG='
         <action function="enable">CloseApp</action>
         <action function="enable">FileSelect</action>
         <action>disable:TMR</action>
-        <action>ln -sf "'$ICONS'/small-red.png" "'$TMPDIR'"/PIX.png</action>
+        <action>ln -sf "'$ICONS'/red-small.png" "'$TMPDIR'"/PIX.png</action>
         <action>refresh:PIX</action>
         <action type="disable">PIX</action>
       </button>  
@@ -236,7 +231,7 @@ export MAIN_DIALOG='
         <label>'$"Close Application"'</label>
         <variable>CloseApp</variable>
         <height>22</height>
-        <input file>"'$ICONS'/eject_recorder.png"</input>
+        <input file>"'$ICONS'/exit.png"</input>
         <action type="exit">exit 0</action>
       </button>         
    </hbox>   

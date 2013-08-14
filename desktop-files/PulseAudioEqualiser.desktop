@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Name=PulseAudio Equaliser
+GenericName=Pulse Audio Equaliser
+Comment=GUI for PA Equaliser
+Exec=qpaeq
+Icon=/usr/share/icons/PulseAudioUtils/icons/equaliser.png
+StartupNotify=true
+Type=Application
+Categories=AudioVideo;Audio;GTK;X-MandrivaLinux-Multimedia-Sound;
+X-Desktop-File-Install-Version=0.21
+Terminal=false
