@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PulseAudioControlPanel\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-08-14 18:01+0200\n"
-"PO-Revision-Date: 2013-08-14 18:03+0100\n"
+"PO-Revision-Date: 2013-08-14 21:12+0100\n"
 "Last-Translator: ghostbunny <hmhaase at pclinuxosusers dot de>\n"
 "Language-Team: Greek <antonis.komis@gmail.com>\n"
 "Language: el\n"
@@ -16,10 +16,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.4\n"
+"X-Poedit-SourceCharset: UTF-8\n"
 
 #: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:41
 msgid "Mixer On/Off"
-msgstr ""
+msgstr "Μίκτης On/Off"
 
 #: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:75
 msgid "Pulse Audio Control Panel"
@@ -107,7 +108,7 @@ msgstr "Κλείσιμο αυτού του Πίνακα Ελέγχου"
 
 #: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:151
 msgid "Close"
-msgstr ""
+msgstr "Κλείσιμο"
 
 #~ msgid "Quit"
 #~ msgstr "Κλείσιμο"
