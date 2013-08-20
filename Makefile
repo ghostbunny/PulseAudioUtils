@@ -18,8 +18,9 @@ install:
 	# icons
 	mkdir -p $(DESTDIR)$(PREFIX)/share/icons/PulseAudioUtils/
 	mkdir -p $(DESTDIR)$(PREFIX)/share/PulseAudioUtils/
-	cp icons/* $(DESTDIR)$(PREFIX)/share/PulseAudioUtils/
-	ln -s $(DESTDIR)$(PREFIX)/share/PulseAudioUtils/icons#1 $(DESTDIR)$(PREFIX)/share/icons/PulseAudioUtils/icons
+	cp -R icons/* $(DESTDIR)$(PREFIX)/share/PulseAudioUtils/
+	# link this in post section of the spec
+	# ln -s /usr/share/PulseAudioUtils/icons#1 /usr/share/icons/PulseAudioUtils/icons
 		
 	# scripts + desktop files
 	mkdir -p $(DESTDIR)$(PREFIX)/bin/
