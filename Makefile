@@ -14,7 +14,12 @@ install:
 	mkdir -p $(DESTDIR)$(PREFIX)/share/locale/el_GR/LC_MESSAGES
 	msgfmt translations/PulseAudioRecorder_el_GR.po -o $(DESTDIR)$(PREFIX)/share/locale/el_GR/LC_MESSAGES/PulseAudioRecorder.mo
 	msgfmt translations/PulseAudioControlPanel_el_GR.po -o $(DESTDIR)$(PREFIX)/share/locale/el_GR/LC_MESSAGES/PulseAudioControlPanel.mo
-	
+
+	# Dutch	
+	mkdir -p $(DESTDIR)$(PREFIX)/share/locale/nl/LC_MESSAGES
+	msgfmt translations/PulseAudioRecorder_nl.po -o $(DESTDIR)$(PREFIX)/share/locale/nl/LC_MESSAGES/PulseAudioRecorder.mo
+	msgfmt translations/PulseAudioControlPanel_nl.po -o $(DESTDIR)$(PREFIX)/share/locale/nl/LC_MESSAGES/PulseAudioControlPanel.mo
+
 	# icons
 	mkdir -p $(DESTDIR)$(PREFIX)/share/icons/PulseAudioUtils/
 	mkdir -p $(DESTDIR)$(PREFIX)/share/PulseAudioUtils/

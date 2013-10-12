@@ -1,0 +1,199 @@
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Antoon Tolboom, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-07-16 22:56+0200\n"
+"PO-Revision-Date: 2013-10-02 22:04+0200\n"
+"Last-Translator: Antoon Tolboom\n"
+"Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Language: nl\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:39
+msgid "Source #"
+msgstr "Bron #"
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:40
+msgid "Name: "
+msgstr "Naam: "
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:41
+#, fuzzy
+msgid "Microphone of"
+msgstr "Microfoon van"
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:42
+#, fuzzy
+msgid "Monitor of"
+msgstr "Monitor van"
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:81
+#, fuzzy
+msgid "Select the Device from whose Sound Stream you wish to Record"
+msgstr "Selecteer het apparaat waarvan u het geluid wilt opnemen"
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:83
+#, fuzzy
+msgid ""
+"Select the device: Choose from the list of possible devices from which to "
+"record. Click the top bar to sort the items. After selecting an entry click "
+"the bottom bar."
+msgstr ""
+"Apparaat selecteren: Kies uit de lijst van mogelijke op te nemen "
+"apparaten. "
+"Klik op de bovenste balk om de items te sorteren. Klik, na het selecteren "
+"van een ingang, op de onderste balk."
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:88
+#, fuzzy
+msgid ""
+"Name|                                     Click on this bar to sort the "
+"items below.  "
+msgstr ""
+"Naam|                                     Klik op deze balk om onderstaande  "
+"items te sorteren.  "
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:99
+#, fuzzy
+msgid "Select Highlighted Entry and Close this Window"
+msgstr "Gemarkeerde ingang selecteren en sluit dit venster"
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:117
+#, fuzzy
+msgid "  Pulse Audio Recorder"
+msgstr "  Pulse Audio Recorder"
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:122
+#, fuzzy
+msgid "                           Select Source Device and Output Filename"
+msgstr ""
+"                           Selecteer bronapparaat en bestandsnaam voor uitvoer"
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:124
+#, fuzzy
+msgid ""
+"Select the device from which you wish to record ...  either an input device "
+"like a microphone or a monitor of the sound going to an output such as "
+"speakers."
+msgstr ""
+"Selecteer het apparaat waarvan u wilt opnemen ... een ingang zoals "
+"een microfoon of een monitor van het geluid zoals luidsprekers."
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:125
+#, fuzzy
+msgid "Select  Source  Device "
+msgstr "Bronapparaat selecteren"
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:132
+#, fuzzy
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:147
+msgid "No_Selection_Made"
+msgstr "Er is niets geselecteerd"
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:138
+#, fuzzy
+msgid ""
+"Here you select the output file name for your saved audio. You may select an "
+"existing file, or type in the name of a new file to record to. It is very "
+"important that you include a file name and a file extension such as '.wav', "
+"'.ogg', '.flac', '.mp2' or '.mp3'. Should you enter an invalid filename you "
+"will not be able to record to it. Be aware ... if you select an existing "
+"file it WILL be overwritten without further warning."
+msgstr ""
+"Hier kunt u een bestandsnaam voor de uitvoer opgeven. Het kan een bestaande "
+"bestandsnaam zijn of voer de naam van een nieuw bestand in. Het is heel "
+"belangrijk om de naam en de extensie op te geven zoals '.wav', '.ogg', "
+"'.flac', '.mp2' or '.mp3'. Bij het opgeven van een ongeldige bestandsnaam "
+"volgt "
+"geen opnemen van het geluid. Opgepast ... een bestaande bestandsnaam "
+"wordt ZONDER waarschuwing overschreven."
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:139
+#, fuzzy
+msgid "Select Output Filename"
+msgstr "Uitvoerbestandsnaam selecteer"
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:145
+#, fuzzy
+msgid ""
+"Enter or Select an Audio Filename which has a  .wav, .ogg, .mp2, .mp3 or ."
+"flac extension"
+msgstr ""
+"Selecteer of voer een geluidbestandsnaam met een .wav, .ogg, .mp2, .mp3 or "
+".flac extensie in"
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:158
+#, fuzzy
+msgid "                           Recording Controls"
+msgstr "                           Instellingen voor opnemen"
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:161
+#, fuzzy
+msgid ""
+"Be sure you have selected both an audio source and a valid output file for "
+"your recording. If either are incorrect go back and re-select before "
+"commencing the recording."
+msgstr ""
+"Wees er zeker van dat een geluidsbron en een uitvoerbestand voor her opnemen "
+"geselecteerd zijn. Wanneer een van beide incorrect zijn, ga terug stel ze "
+"opnieuw in."
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:162
+#, fuzzy
+msgid "Start Recording"
+msgstr "Opnemen starten"
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:195
+#, fuzzy
+msgid ""
+"To Pause a recording press this button and to Resume recording press it "
+"again. A 0.5 sec gap of silence will be introduced at each Pause."
+msgstr ""
+"Druk op deze knop voor het pauzeren van de opname en hervat het opnemen door "
+"het opnieuw indrukken. Een 0.5 seconde stilte wordt na iedere pauze "
+"toegevoegd."
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:199
+#, fuzzy
+msgid "Pause/Resume"
+msgstr "Pauzeren/Hervatten"
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:215
+#, fuzzy
+msgid ""
+"Select 'Stop Recording' to stop the recording and have the recorded audio "
+"processed and saved in your selected file. Please allow a little time for "
+"post processing of the audio."
+msgstr ""
+"Selecteer 'Opnemen stoppen' om de opname te beëindigen, laat het geluid "
+"bewerken en in het geselecteerde bestand opslaan. Laat voldoende tijd voor de "
+"nabewerking  van het geluid."
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:216
+#, fuzzy
+msgid "Stop Recording"
+msgstr "Opnemen stoppen"
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:235
+#, fuzzy
+msgid ""
+" Select 'Close Application' to exit.  Please use this button and not the 'X' "
+"of the window, for best results"
+msgstr ""
+" Selecteer 'Toepassing sluiten' voor het verlaten. Gebruik, voor het beste "
+"resultaat,  deze knop en niet de knop 'X' van het scherm."
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioRecorder:236
+#, fuzzy
+msgid "Close Application"
+msgstr "Toepassing sluiten"
+
+

@@ -1,0 +1,116 @@
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Antoon Tolboom, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-07-10 19:55+0200\n"
+"PO-Revision-Date: 2013-10-02 22:42+0200\n"
+"Last-Translator: Antoon Tolboom\n"
+"Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Language: nl\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:72
+#, fuzzy
+msgid "Pulse Audio Control Panel"
+msgstr "Pulse Audio Bedieningspaneel"
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:78
+#, fuzzy
+msgid "Pulse Audio Basic Functions"
+msgstr "Pulse Audio Basisfuncties"
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:82
+#, fuzzy
+msgid ""
+" This utility allows the user to not only alter volumes but also to "
+"determine to which device a sound stream is sent, amongst other functions. "
+"It is well worth the effort to familiarise yourself with this utility."
+msgstr ""
+" Dit hulpmiddel stelt de gebruiker in staat om niet alleen het volume te "
+"regelen maar ook het apparaat waarnaar het geluid gestuurd wordt en andere "
+"functies. Het is dus raadzaam om jezelf met dit hulpmiddel vertrouwd te make. "
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:83
+#, fuzzy
+msgid "PaVolControl"
+msgstr "PaVolControl"
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:91
+#, fuzzy
+msgid ""
+"Launch the PulseAudio Equalizer. This displays as many sliders as will fit "
+"in the display ... so enlarging the window horizontally causes many more "
+"sliders to become available."
+msgstr ""
+"Start de PulseAudio Equalizer. Vergroot het scherm in horizontale richting "
+"totdat alle regelaars zichtbaar zijn."
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:92
+#, fuzzy
+msgid "Equalizer"
+msgstr "Equalizer"
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:102
+#, fuzzy
+msgid ""
+"PulseAudio Preferences provides a means to set up audio over the network, "
+"multicasting and sending simultaneous output to all connected sound sink "
+"devices."
+msgstr ""
+"PulseAudio Voorkeuren maakt het instellen van geluid over het netwerk, "
+"multicasting en het tegelijkertijd versturen van uitvoer naar alle "
+"aangesloten uitvoerapparaten mogelijk."
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:103
+#, fuzzy
+msgid "PAPrefs    "
+msgstr "PAPrefs    "
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:120
+#, fuzzy
+msgid "PCLinuxOS Extra Functions"
+msgstr "PCLinuxOS Extra Functies"
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:124
+#, fuzzy
+msgid ""
+"This does all the settings to provide a two input mixer and a mixed output "
+"which can be recorded. You can mix any two sound sources available in "
+"PulseAudio. Use the PulseAudio Volume Control utility to manage the mixer."
+msgstr ""
+"Dit maakt het mogelijk om instellingen te maken voor een twee ingangen mixer "
+"en een uitgang die opgenomen kan worden. U kunt twee geluidsbronnen "
+"samenvoegen die in PulseAudio beschikbaar zijn. Gebruik de geluidsregelaars "
+"in PulsAudio voor het regelen van de mixen."
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:137
+#, fuzzy
+msgid ""
+"This allows you to record any sound that is being handled by PulseAudio. It "
+"can be used to record the mixer output, or any sound stream being played."
+msgstr ""
+"Dit maakt het mogelijk om ieder geluid, dat door PulseAudio bewerkt wordt, op "
+"te nemen. Het kan gebruikt worden voor het opnemen van een mixeruitgang of "
+"ieder af te spelen geluidsbron."
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:138
+msgid "Audio Recorder"
+msgstr "Geluidsrecorder"
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:146
+msgid "Close this Control Panel"
+msgstr "Bedieningspaneel sluiten"
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:147
+#, fuzzy
+msgid "Quit"
+msgstr "Afsluiten"
+
