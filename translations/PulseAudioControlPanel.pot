@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-08-14 18:01+0200\n"
+"POT-Creation-Date: 2013-10-12 17:50+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,27 +17,27 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:41
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:42
 msgid "Mixer On/Off"
 msgstr ""
 
-#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:75
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:76
 msgid "Pulse Audio Control Panel"
 msgstr ""
 
-#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:81
-msgid "Pulse Audio Basic Functions"
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:82
+msgid "Pulse Audio Functions"
 msgstr ""
 
-#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:85
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:86
 msgid ""
 " This utility allows the user to not only alter volumes but also to "
 "determine to which device a sound stream is sent, amongst other functions. "
 "It is well worth the effort to familiarise yourself with this utility."
 msgstr ""
 
-#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:86
-msgid "PaVolControl"
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:87
+msgid "PaVolControl "
 msgstr ""
 
 #: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:94
@@ -48,7 +48,7 @@ msgid ""
 msgstr ""
 
 #: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:95
-msgid "Equalizer"
+msgid "PaEqualizer "
 msgstr ""
 
 #: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:105
@@ -59,11 +59,11 @@ msgid ""
 msgstr ""
 
 #: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:106
-msgid "PaPrefs    "
+msgid "PaPrefs "
 msgstr ""
 
 #: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:123
-msgid "PCLinuxOS Extra Functions"
+msgid "PulseAudio Extra Functions"
 msgstr ""
 
 #: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:127
@@ -80,13 +80,37 @@ msgid ""
 msgstr ""
 
 #: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:142
-msgid "Audio Recorder"
+msgid "PA Recorder "
 msgstr ""
 
 #: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:150
-msgid "Close this Control Panel"
+msgid ""
+"This is designed to allow you to record both sides of a conversation over "
+"VOIP (SIP or Skype etc) into one file (or two if you wish)."
 msgstr ""
 
 #: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:151
+msgid "PulseCaster "
+msgstr ""
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:168
+msgid " "
+msgstr ""
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:173
+msgid ""
+"This is a multifunctional audio recorder which can record any sound that you "
+"can hear from your speakers"
+msgstr ""
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:174
+msgid "audio-recorder"
+msgstr ""
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:181
+msgid "Close this Control Panel"
+msgstr ""
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:182
 msgid "Close"
 msgstr ""

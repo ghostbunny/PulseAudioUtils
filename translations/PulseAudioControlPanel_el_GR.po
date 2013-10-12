@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PulseAudioControlPanel\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-08-14 18:01+0200\n"
-"PO-Revision-Date: 2013-08-14 21:12+0100\n"
+"POT-Creation-Date: 2013-10-12 17:50+0200\n"
+"PO-Revision-Date: 2013-10-12 17:58+0100\n"
 "Last-Translator: ghostbunny <hmhaase at pclinuxosusers dot de>\n"
 "Language-Team: Greek <antonis.komis@gmail.com>\n"
 "Language: el\n"
@@ -18,19 +18,20 @@ msgstr ""
 "X-Generator: Poedit 1.5.4\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
-#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:41
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:42
 msgid "Mixer On/Off"
 msgstr "Μίκτης On/Off"
 
-#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:75
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:76
 msgid "Pulse Audio Control Panel"
 msgstr "Πίνακας Ελέγχου Pulse Audio"
 
-#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:81
-msgid "Pulse Audio Basic Functions"
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:82
+#, fuzzy
+msgid "Pulse Audio Functions"
 msgstr "Βασικές Λειτουργίες Pulse Audio"
 
-#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:85
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:86
 msgid ""
 " This utility allows the user to not only alter volumes but also to "
 "determine to which device a sound stream is sent, amongst other functions. "
@@ -41,8 +42,9 @@ msgstr ""
 "μια ροή ήχου. Αξίζει τον κόπο η προσπάθεια να εξοικειωθείτε με αυτήν την "
 "εφαρμογή."
 
-#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:86
-msgid "PaVolControl"
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:87
+#, fuzzy
+msgid "PaVolControl "
 msgstr "Έλεγχος Έντασης PulseAudio"
 
 #: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:94
@@ -56,7 +58,8 @@ msgstr ""
 "περισσότερα ρυθμιστικά να γίνουν διαθέσιμα."
 
 #: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:95
-msgid "Equalizer"
+#, fuzzy
+msgid "PaEqualizer "
 msgstr "Ισοσταθμιστής"
 
 #: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:105
@@ -71,12 +74,13 @@ msgstr ""
 
 #: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:106
 #, fuzzy
-msgid "PaPrefs    "
+msgid "PaPrefs "
 msgstr "Επιλογές PulseAudio"
 
 #: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:123
-msgid "PCLinuxOS Extra Functions"
-msgstr "Επιπλέον Λειτουργίες PCLinuxOS"
+#, fuzzy
+msgid "PulseAudio Extra Functions"
+msgstr "Βασικές Λειτουργίες Pulse Audio"
 
 #: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:127
 msgid ""
@@ -99,16 +103,45 @@ msgstr ""
 "οποιαδήποτε ροή ήχου αναπαράγεται."
 
 #: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:142
-msgid "Audio Recorder"
+#, fuzzy
+msgid "PA Recorder "
 msgstr "Συσκευή Εγγραφής Ήχου"
 
 #: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:150
+msgid ""
+"This is designed to allow you to record both sides of a conversation over "
+"VOIP (SIP or Skype etc) into one file (or two if you wish)."
+msgstr ""
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:151
+msgid "PulseCaster "
+msgstr ""
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:168
+msgid " "
+msgstr ""
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:173
+msgid ""
+"This is a multifunctional audio recorder which can record any sound that you "
+"can hear from your speakers"
+msgstr ""
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:174
+#, fuzzy
+msgid "audio-recorder"
+msgstr "Συσκευή Εγγραφής Ήχου"
+
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:181
 msgid "Close this Control Panel"
 msgstr "Κλείσιμο αυτού του Πίνακα Ελέγχου"
 
-#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:151
+#: /home/ghostbunny/gitrepos/PulseAudioUtils/scripts/PulseAudioControlPanel:182
 msgid "Close"
 msgstr "Κλείσιμο"
+
+#~ msgid "PCLinuxOS Extra Functions"
+#~ msgstr "Επιπλέον Λειτουργίες PCLinuxOS"
 
 #~ msgid "Quit"
 #~ msgstr "Κλείσιμο"

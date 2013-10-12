@@ -19,7 +19,7 @@ set -x # Uncomment to display verbose output from a terminal launch
 #
 #############################
 # 
-# Version: 0.2.0
+# Version: 0.2.1 Oct 2013
 # License: GPLv2
 # Author:  clareoldie <clareoldie@gmail.com>
 # Contributors: ghostbunny, agmg, AS
@@ -29,7 +29,8 @@ set -x # Uncomment to display verbose output from a terminal launch
 #	       paprefs
 #              PulseAudioMixer
 #              PulseAudioRecorder
-#
+#              audio-recorder
+#              pulsecaster
 #############################
 # 
 # Set up default directory for recordings and a default file.
@@ -78,21 +79,20 @@ export MAIN_DIALOG='
 		<hseparator></hseparator>
 		<hseparator></hseparator>
 
-		<frame '$"Pulse Audio Basic Functions"' >
+		<frame '$"Pulse Audio Functions"' >
 			<hbox homogeneous="true" space-expand="true">
 				<hbox>
 					<vbox>
 						<button tooltip-text="'$" This utility allows the user to not only alter volumes but also to determine to which device a sound stream is sent, amongst other functions. It is well worth the effort to familiarise yourself with this utility."'">
-							<label>'$"PaVolControl"'</label>
-							<height>22</height>
-							<input file>"/usr/share/icons/pavucontrol.png"</input>
+							<label>'$"PaVolControl "'</label>
+							<height>22</height>						<input file>"/usr/share/icons/pavucontrol.png"</input>
 							<action>pavucontrol &</action>
 						</button>
 					</vbox>
         
 					<vbox>
 						<button tooltip-text="'$"Launch the PulseAudio Equalizer. This displays as many sliders as will fit in the display ... so enlarging the window horizontally causes many more sliders to become available."'">
-							<label>'$"Equalizer"'</label>
+							<label>'$"PaEqualizer "'</label>
 							<height>22</height>
 							<input file>"'$ICONS'/equaliser.png"</input>
 							<action>qpaeq &</action>
@@ -103,7 +103,7 @@ export MAIN_DIALOG='
 
 					<vbox>
 						<button tooltip-text="'$"PulseAudio Preferences provides a means to set up audio over the network, multicasting and sending simultaneous output to all connected sound sink devices."'">
-							<label>'$"PaPrefs    "'</label>
+							<label>'$"PaPrefs "'</label>
 							<height>22</height>
 							<input file>"/usr/share/icons/paprefs.png"</input>
 							<action>paprefs &</action>
@@ -120,12 +120,12 @@ export MAIN_DIALOG='
 
 		
 
-		<frame '$"PCLinuxOS Extra Functions"' >
+		<frame '$"PulseAudio Extra Functions"' >
 			<hbox homogeneous="true" space-expand="true">
 				<hbox>
 					<vbox>
 						<togglebutton tooltip-text="'$"This does all the settings to provide a two input mixer and a mixed output which can be recorded. You can mix any two sound sources available in PulseAudio. Use the PulseAudio Volume Control utility to manage the mixer."'">
-							<label>"'"$ToggleLabel"'"</label>
+							<label>"'"$ToggleLabel "'"</label>
 							<height>22</height>
 							<variable>Toggle</variable> 
 							<default>"'"$STATE"'"</default>           
@@ -139,13 +139,44 @@ export MAIN_DIALOG='
 
 					<vbox>
 						<button tooltip-text="'$"This allows you to record any sound that is being handled by PulseAudio. It can be used to record the mixer output, or any sound stream being played."'">
-							<label>'$"Audio Recorder"'</label>
+							<label>'$"PA Recorder "'</label>
 							<height>22</height>
 							<input file>"'$ICONS'/record.png"</input>
 							<action>/usr/bin/PulseAudioRecorder &</action>
 						</button>
-					</vbox>
+					</vbox> 
 
+					<vbox>
+						<button tooltip-text="'$"This is designed to allow you to record both sides of a conversation over VOIP (SIP or Skype etc) into one file (or two if you wish)."'">
+							<label>'$"PulseCaster "'</label>
+							<height>22</height>
+							<input file>"/usr/share/icons/hicolor/32x32/apps/pulsecaster-32.png"</input>
+							<action>/usr/bin/pulsecaster &</action>
+						</button>
+					</vbox> 
+
+
+				</hbox>
+			</hbox>
+		</frame>
+
+
+		<hseparator></hseparator>
+		<hseparator></hseparator> 
+
+		
+		<frame '$" "' >
+			<hbox homogeneous="true" space-expand="true">
+				<hbox>
+		
+					<vbox>
+						<button tooltip-text="'$"This is a multifunctional audio recorder which can record any sound that you can hear from your speakers"'">
+							<label>'$"audio-recorder"'</label>
+							<height>22</height>
+							<input file>"/usr/share/icons/hicolor/32x32/apps/audio-recorder.png"</input>
+							<action>/usr/bin/audio-recorder &</action>
+						</button>
+					</vbox> 
 					<vbox>
 						<button tooltip-text="'$"Close this Control Panel"'">
 							<label>'$"Close"'</label>
@@ -168,5 +199,3 @@ export GUI="`echo "$MAIN_DIALOG" | sed -e 's/##.*//'`"
 gtkdialog -p GUI
 rm -f "$TMPDIR"/flagOnOff1  "$TMPDIR"/PIX1.png
 exit 0
-
-
